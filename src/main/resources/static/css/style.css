@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    /* box-sizing: border-box; */
+}
+
+html, body{
+    background: #e5e5e5;
+}
+
+#header{
+    background-color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    /*line-height: 15px;*/
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    height: 90px;
+}
+
+.nav {
+    text-align: center;
+    list-style-type: none;
+    vertical-align: middle;
+    padding: 25px 0px;
+}
+
+li{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0px 15px;
+}
+
+a.nav{
+    text-decoration: none;
+    color: #000;
+}
+
+.blackButton{
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    padding: 12px 30px 13px 30px;
+}
+
+#logo_img{
+    width: 20px;
+    height: 25px;
+}
+
+#logo_line{
+    width: 2px;
+    height: 25px;
+    padding-right: 6px;
+    padding-left: 8px;
+    display: inline-block;
+}
+
+#sait_name{
+    height: 25px;
+    display: inline-block;
+    color: #0D47A1;
+    line-height: 15px;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.search_box{
+    width: 255px;
+    height: 40px;
+    padding-left: 15px;
+    border:none;
+    border-radius: 40px;
+    background: #F0F0F0;
+    outline: none;
+    transition: .3s linear;
+    color:#848484;
+}
