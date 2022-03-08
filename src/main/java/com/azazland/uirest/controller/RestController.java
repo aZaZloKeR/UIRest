@@ -60,8 +60,6 @@ public class RestController {
     public String registrationPage(){
         return "registration";
     }
-    // cookie завёрнуты в json или http
-
     @PostMapping(value = "kozh/authentication",consumes = "application/json", produces = "application/json")
     public String getAuthPage(@CookieValue("sessionToken") String cookie, HttpServletResponse response) {
         Cookie cookieForFront = new Cookie("sessionToken", cookie);
