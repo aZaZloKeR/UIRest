@@ -56,10 +56,6 @@ public class RestController {
     public String loginPage(){
         return "login";
     }
-    @GetMapping(value = "ui/registration")
-    public String registrationPage(){
-        return "registration";
-    }
     @PostMapping(value = "kozh/authentication",consumes = "application/json", produces = "application/json")
     public String getAuthPage(@CookieValue("sessionToken") String cookie, HttpServletResponse response) {
         Cookie cookieForFront = new Cookie("sessionToken", cookie);
