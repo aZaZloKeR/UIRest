@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    /* box-sizing: border-box; */
 }
 
 html, body{
@@ -15,8 +14,6 @@ html, body{
     font-weight: 500;
     font-size: 14px;
     line-height: 15px;
-    letter-spacing: 0.05em;
-    /*line-height: 15px;*/
     letter-spacing: 0.05em;
     text-transform: uppercase;
     height: 90px;
@@ -36,8 +33,18 @@ li{
     font-weight: bolder;
     margin: 0px 15px;
 }
+/*
+.liHeader{
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0px 15px;
+} */
 
-a.nav{
+a{
+    cursor: pointer;
+}
+a.nav, a.choose{
     text-decoration: none;
     color: #000;
 }
@@ -46,9 +53,15 @@ a.nav{
     background-color: #000;
     color: #fff;
     text-decoration: none;
-    padding: 5px;
-    display: block;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
     padding: 12px 30px 13px 30px;
+    display: block;
+    width: 50px;
 }
 
 #logo_img{
@@ -78,11 +91,105 @@ a.nav{
 .search_box{
     width: 255px;
     height: 40px;
-    padding-left: 15px;
     border:none;
     border-radius: 40px;
     background: #F0F0F0;
     outline: none;
     transition: .3s linear;
     color:#848484;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+main{
+    /* position: relative; */
+}
+
+.menu_wrapper{
+    position: relative;
+    float: right;
+    right: 30%;
+}
+
+.wrapper{
+    background-color: #fff;
+    width: 30%;
+    position: relative;
+    float: left;
+    left: 30%;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+}
+
+#registrationBlock, #loginBlock{
+    display: inline-block;
+    width: 80%;
+    height: 80%;
+}
+
+#loginBlock{
+    height: 280px;
+}
+
+#registrationBlock{
+    height: 570px;
+}
+
+div.chooseRef{
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 45px;
+}
+
+a.choose{
+    font-size: 24px;
+    color:#848484;
+    margin-right: 40px;
+}
+
+a.choose:focus{
+    color:#000;
+    border-bottom: 2px solid #000;
+}
+
+input{
+    color:#848484;
+    border: 0.5px solid #000;
+    height: 40px;
+    width: 95%;
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+#registButt, #loginButt{
+    margin-top: 20px;
+}
+
+#registButt{
+    width: 160px;
+}
+
+.inlineInput{
+    width: 95%;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.initials{
+    width: 29%;
+    display: inline-block;
+    position: relative;
+}
+
+p.inlineDiv{
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    font-size: 15px;
+}
+
+#checkboxInput{
+    width: 10%;
+    height: 16px;
 }
