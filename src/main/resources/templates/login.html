@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="utf-8" />
     <title>Инициативы Дубны</title>
-    <link href="./STYLE/style.css" rel="stylesheet" type="text/css"/>
+    <link href="./style.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="./JS/form.js"></script>
+    <script src="./form.js"></script>
 </head>
 <body>
 <header id="header">
@@ -25,36 +25,35 @@
         <li><a class="nav" href="#">Предложить инициативу</a></li>
         <li><a class="nav" href="#">Правила работы</a></li>
         <li><a class="nav" href="#">Обратная связь</a></li>
-        <li><a id="reg" href="./login.htm" class="blackButton" onclick="onLogin()">Войти</a></li>
+        <li><a id="reg" href="login.html" class="blackButton" onclick="onLogin()">Войти</a></li>
     </ul>
 </header>
 <main>
     <div class="manu_wrapper">
         <div class="wrapper">
             <div class="chooseRef" >
-                <a class="choose" id="logForm" href="#" onclick="onLogin()">Вход</a>
-                <a class="choose" id="regForm" href="#" onclick="onRegistration()">Регистрация</a>
+                <a class="choose" id="logForm" onclick="onLogin()">Вход</a>
+                <a class="choose" id="regForm" onclick="onRegistration()">Регистрация</a>
             </div>
             <div id="loginBlock">
-                <form name="loginForm" class="loginForm" method="get">
-                    <input type="email" placeholder="Почта"/>
-                    <input type="password" placeholder="Пароль"/>
-                    <!-- <a id="loginButt" class="blackButton" href="#">Войти</a> -->
+                <form name="loginForm" id="loginForm" class="loginForm" method="get">
+                    <input name="mail" type="email" placeholder="Почта"/>
+                    <input name="password" type="password" placeholder="Пароль"/>
                 </form>
-                <a id="loginButt" class="blackButton" href="#">Войти</a>
+                <a id="loginButt" onclick="login()" class="blackButton">Войти</a>
             </div>
             <div id="registrationBlock" style="display: none;">
                 <form name="registForm" class="registForm" method="get">
                     <div class="inlineInput">
-                        <input class="initials" style="margin-right:1%;" type="text" placeholder="Фaмилия"/>
-                        <input class="initials" style="margin-right:1%;" type="text" placeholder="Имя"/>
-                        <input class="initials" type="text" placeholder="Отчество"/>
+                        <input name="lastName" class="initials" style="margin-right:1%;" type="text" placeholder="Фaмилия"/>
+                        <input name="firstName" class="initials" style="margin-right:1%;" type="text" placeholder="Имя"/>
+                        <input name="thirdName" class="initials" type="text" placeholder="Отчество"/>
                     </div>
-                    <input type="text" placeholder="Дата рождения"/>
-                    <input type="text" placeholder="Телефон"/>
-                    <input type="text" placeholder="Адрес проживания"/>
-                    <input type="email" placeholder="Почта"/>
-                    <input type="password" placeholder="Пароль"/>
+                    <input name="birthDate" type="text" placeholder="Дата рождения"/>
+                    <input name="phone" type="text" placeholder="Телефон"/>
+                    <input name="address" type="text" placeholder="Адрес проживания"/>
+                    <input name="email" type="email" placeholder="Почта"/>
+                    <input name="password" type="password" placeholder="Пароль"/>
                     <div class="inlineInput"><input id="checkboxInput" class="inlineDiv" type="checkbox" /><p class="inlineDiv">Согласен с <a style="text-decoration: underline #0D47A1; color:#0D47A1;">политикой конфиденциальности</a></p></div>
                     <!-- <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a> -->
                 </form>
