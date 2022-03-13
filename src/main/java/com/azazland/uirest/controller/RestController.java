@@ -1,14 +1,10 @@
 package com.azazland.uirest.controller;
 
 
+import com.azazland.uirest.json.unpacker.LoginUnpackerJson;
 import com.azazland.uirest.json.unpacker.RegistrationUnpackerJson;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +15,7 @@ import java.net.http.HttpResponse;
 
 @Controller
 public class RestController {
-    @PostMapping(value = "ui/registration",consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/balancer/registration",consumes = "application/json", produces = "application/json")
     public String registrationNewUser(@RequestBody RegistrationUnpackerJson registrationUnpackerJson){
         try {
             if (registrationUnpackerJson == null){
@@ -27,8 +23,8 @@ public class RestController {
             }
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://kozh/registration/post"))
-                    .POST(HttpRequest.BodyPublishers.ofString(registrationUnpackerJson.getLogin() + registrationUnpackerJson.getPassword()))
+                    .uri(new URI("https://auth/users/post"))
+                    .POST(HttpRequest.BodyPublishers.ofString(registrationUnpackerJson.toString()))
                     .build();
             httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
@@ -36,30 +32,65 @@ public class RestController {
         }
         return "login";
     }
-    @PostMapping(value = "ui/authentication",consumes = "application/json", produces = "application/json")
-    public void getLogin(@RequestBody HttpEntity<String> httpEntity){
+    @PostMapping(value = "/balancer/login",consumes = "application/json", produces = "application/json")
+    public void getLogin(@RequestBody LoginUnpackerJson loginUnpackerJson){
         try {
-            if (httpEntity.getBody() == null){
+            if (loginUnpackerJson == null){
                 throw new Exception("httpEntity is null -> This is custom exception");
             }
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://kozh/authentication/post"))
-                    .POST(HttpRequest.BodyPublishers.ofString(httpEntity.getBody()))
+                    .uri(new URI("https://auth/login/post"))
+                    .POST(HttpRequest.BodyPublishers.ofString(loginUnpackerJson.toString()))
                     .build();
             httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    @GetMapping(value = "ui/login")
-    public String loginPage(){
-        return "login";
-    }
-    @PostMapping(value = "kozh/authentication",consumes = "application/json", produces = "application/json")
+/*    @GetMapping(value = "auth/login")
     public String getAuthPage(@CookieValue("sessionToken") String cookie, HttpServletResponse response) {
         Cookie cookieForFront = new Cookie("sessionToken", cookie);
         response.addCookie(cookieForFront);
         return "index";
+    }*/
+
+    @GetMapping(value = "ui/login")
+    public String loginPage(){
+        return "login";
+    }
+    @GetMapping(value = "ui/registration")
+    public String registrationPage(){
+        return "registration";
+    }
+    @PutMapping(value = "/balancer/users/{userId}")
+    public @ResponseBody String updateUser(@PathVariable int userId,RegistrationUnpackerJson registrationUnpackerJson,
+                                           HttpServletResponse response){
+        try {
+            HttpClient httpClient = HttpClient.newHttpClient();
+            HttpRequest httpRequest = HttpRequest.newBuilder()
+                    .uri(new URI("https://auth/users/{"+ userId +"}/put"))
+                    .PUT(HttpRequest.BodyPublishers.ofString(registrationUnpackerJson.toString()))
+                    .build();
+            HttpServletResponse httpResponse = (HttpServletResponse)httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            response.addCookie(new Cookie("sessionToken",httpResponse.getHeader("Set-Cookie")));//как-то прикрутить куки которые пришли от кожемяки к кукам которые отправляем алексу
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "index";
+    }
+    @GetMapping(value = "/balancer/users/{userId}")
+    public HttpResponse<String> giveInfoAboutUser(@PathVariable int userId){
+        try {
+            HttpClient httpClient = HttpClient.newHttpClient();
+            HttpRequest httpRequest = HttpRequest.newBuilder()
+                    .uri(new URI("https://auth/users/{"+ userId +"}/get"))
+                    .GET()
+                    .build();
+            return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
