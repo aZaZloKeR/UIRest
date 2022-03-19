@@ -54,7 +54,6 @@ public class RestController {
         response.addCookie(cookieForFront);
         return "index";
     }*/
-
     @GetMapping(value = "ui/login")
     public String loginPage(){
         return "login";
