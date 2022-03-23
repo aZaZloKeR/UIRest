@@ -113,7 +113,7 @@ main{
 
 .wrapper{
     background-color: #fff;
-    width: 30%;
+    width: 35%;
     position: relative;
     float: left;
     left: 30%;
@@ -134,6 +134,20 @@ main{
 
 #registrationBlock{
     height: 570px;
+	display:none;
+}
+
+.active
+{
+	animation:AnimationAddForm 0.5s ease;
+	opacity:1;
+	display:block !important;
+}
+
+.inactive 
+{
+	animation:AnimationRemoveForm 0.5s ease;
+	opacity:0;
 }
 
 div.chooseRef{
@@ -163,7 +177,7 @@ input{
 }
 
 #registButt, #loginButt{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #registButt{
@@ -171,15 +185,16 @@ input{
 }
 
 .inlineInput{
-    width: 95%;
+    width: 100%;
     align-items: center;
     white-space: nowrap;
 }
 
 .initials{
-    width: 29%;
+    width: 27%;
     display: inline-block;
     position: relative;
+	margin-right: 4px;
 }
 
 p.inlineDiv{
@@ -189,7 +204,43 @@ p.inlineDiv{
     font-size: 15px;
 }
 
+#password2
+{
+	margin:0px;
+}
+
+#labelPassword2
+{
+	color:red;
+}
+
 #checkboxInput{
     width: 10%;
     height: 16px;
+	margin-top: 15px;
+	box-sizing: border-box;
+}
+
+@keyframes AnimationAddForm
+{
+	0%
+	{
+		opacity:0;
+	}
+	100%
+	{
+		opacity:1;
+	}
+}
+
+@keyframes AnimationRemoveForm
+{
+	0%
+	{
+		opacity:1;
+	}
+	100%
+	{
+		opacity:0;
+	}
 }
