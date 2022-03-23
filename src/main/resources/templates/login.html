@@ -5,8 +5,7 @@
     <title>Инициативы Дубны</title>
     <link href="./style.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="./form.js"></script>
-</head>
+    <script src="./form.js"></script></head>
 <body>
 <header id="header">
     <ul class="nav">
@@ -22,7 +21,7 @@
                 <input type="search" placeholder="Поиск" name="search" class="search_box">
             </form>
         </li>
-        <li><a class="nav" href="#">Предложить инициативу</a></li>
+        <li><a class="nav" href="#">Инициативы</a></li>
         <li><a class="nav" href="#">Правила работы</a></li>
         <li><a class="nav" href="#">Обратная связь</a></li>
         <li><a id="reg" href="login.html" class="blackButton" onclick="onLogin()">Войти</a></li>
@@ -35,29 +34,31 @@
                 <a class="choose" id="logForm" onclick="onLogin()">Вход</a>
                 <a class="choose" id="regForm" onclick="onRegistration()">Регистрация</a>
             </div>
-            <div id="loginBlock">
+            <div id="loginBlock" class="active">
                 <form name="loginForm" id="loginForm" class="loginForm" method="get">
                     <input name="mail" type="email" placeholder="Почта"/>
                     <input name="password" type="password" placeholder="Пароль"/>
                 </form>
                 <a id="loginButt" onclick="login()" class="blackButton">Войти</a>
             </div>
-            <div id="registrationBlock" style="display: none;">
+            <div id="registrationBlock" class="inactive">
                 <form name="registForm" class="registForm" method="get">
                     <div class="inlineInput">
-                        <input name="lastName" class="initials" style="margin-right:1%;" type="text" placeholder="Фaмилия"/>
-                        <input name="firstName" class="initials" style="margin-right:1%;" type="text" placeholder="Имя"/>
+                        <input name="lastName" class="initials" type="text" placeholder="Фaмилия"/>
+                        <input name="firstName" class="initials" type="text" placeholder="Имя"/>
                         <input name="thirdName" class="initials" type="text" placeholder="Отчество"/>
                     </div>
                     <input name="birthDate" type="text" placeholder="Дата рождения"/>
                     <input name="phone" type="text" placeholder="Телефон"/>
                     <input name="address" type="text" placeholder="Адрес проживания"/>
                     <input name="email" type="email" placeholder="Почта"/>
-                    <input name="password" type="password" placeholder="Пароль"/>
-                    <div class="inlineInput"><input id="checkboxInput" class="inlineDiv" type="checkbox" /><p class="inlineDiv">Согласен с <a style="text-decoration: underline #0D47A1; color:#0D47A1;">политикой конфиденциальности</a></p></div>
+                    <input name="password1" type="password" placeholder="Пароль"/>
+					<input name="password2" type="password" id="password2" onchange="comparePasswords();" placeholder="Повторите пароль"/>
+                    <label name="labelPassword2" id="labelPassword2">&#8291;</label>
+					<div class="inlineInput"><input id="checkboxInput" class="inlineDiv" type="checkbox" /><p class="inlineDiv">Согласен с <a style="text-decoration: underline #0D47A1; color:#0D47A1;">политикой конфиденциальности</a></p></div>
                     <!-- <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a> -->
                 </form>
-                <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a>
+                <a id="registButt" class="blackButton" onclick="registration();" href="#">Зарегистрироваться</a>
             </div>
         </div>
     </div>
