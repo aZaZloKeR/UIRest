@@ -24,22 +24,22 @@
         <li><a class="nav" href="#">Инициативы</a></li>
         <li><a class="nav" href="#">Правила работы</a></li>
         <li><a class="nav" href="#">Обратная связь</a></li>
-        <li><a id="reg" href="login.html" class="blackButton" onclick="onLogin()">Войти</a></li>
+        <li><a id="reg" href="login.html" class="button blueBack" onclick="onLogin()">Войти</a></li>
     </ul>
 </header>
 <main>
     <div class="manu_wrapper">
         <div class="wrapper">
             <div class="chooseRef" >
-                <a class="choose" id="logForm" onclick="onLogin()">Вход</a>
-                <a class="choose" id="regForm" onclick="onRegistration()">Регистрация</a>
+                <div id="loginFormDiv" class="chooseRef2 borderBottom" onclick="AddBorderToLoginForm();"> <a class="choose" id="logForm" onclick="onLogin()">Вход</a></div>
+                <div id="regFormDiv" class="chooseRef2" onclick="AddBorderToRegistrationForm();"> <a class="choose" id="regForm" onclick="onRegistration()">Регистрация</a></div>
             </div>
             <div id="loginBlock" class="active">
                 <form name="loginForm" id="loginForm" class="loginForm" method="get">
                     <input name="mail" type="email" placeholder="Почта"/>
                     <input name="password" type="password" placeholder="Пароль"/>
                 </form>
-                <a id="loginButt" onclick="login()" class="blackButton">Войти</a>
+                <a id="loginButt" onclick="login()" class="grayBack button">Войти</a>
             </div>
             <div id="registrationBlock" class="inactive">
                 <form name="registForm" class="registForm" method="get">
@@ -58,10 +58,10 @@
                     <input name="password1" class="inputAfterLabel" type="password" placeholder="Пароль"/>
 					<input name="password2" type="password" id="password2" onchange="comparePasswords();" placeholder="Повторите пароль"/>
                     <label name="labelPassword2" id="labelPassword2">&nbsp;</label>
-					<label name="labelCheckbox" id="labelCheckbox"><input id="checkboxInput" type="checkbox" />Согласен с <p style="color:#0D47A1;">политикой конфиденциальности</p></label>
+					<label name="labelCheckbox" id="labelCheckbox"><input id="checkboxInput" type="checkbox" />Согласен с <a>политикой конфиденциальности</a></label>
                     <!-- <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a> -->
                 </form>
-                <a id="registButt" class="blackButton" onclick="registration();" href="#">Зарегистрироваться</a>
+                <a id="registButt" class="button grayBack" onclick="registration();" href="#">Зарегистрироваться</a>
             </div>
         </div>
     </div>
