@@ -49,13 +49,16 @@
                         <input name="thirdName" class="initials" type="text" placeholder="Отчество"/>
                     </div>
                     <input name="birthDate" type="text" placeholder="Дата рождения"/>
-                    <input name="phone" type="text" placeholder="Телефон"/>
-                    <input name="address" type="text" placeholder="Адрес проживания"/>
-                    <input name="email" type="email" placeholder="Почта"/>
-                    <input name="password1" type="password" placeholder="Пароль"/>
+                    <input name="phone" id="phone" onchange="ValidPhone()" type="text" placeholder="Телефон"/>
+					<label name="labelPhone" id="labelPhone">&nbsp;</label>
+                    <input name="address" class="inputAfterLabel" type="text" placeholder="Адрес проживания"/>
+                    <label name="labelAdress" id="labelAdress">&nbsp;</label>
+					<input name="email" class="inputAfterLabel" type="email" onchange="ValidMail();" placeholder="Почта"/>
+					<label name="labelEMail" id="labelEMail">&nbsp;</label>
+                    <input name="password1" class="inputAfterLabel" type="password" placeholder="Пароль"/>
 					<input name="password2" type="password" id="password2" onchange="comparePasswords();" placeholder="Повторите пароль"/>
-                    <label name="labelPassword2" id="labelPassword2">&#8291;</label>
-					<div class="inlineInput"><input id="checkboxInput" class="inlineDiv" type="checkbox" /><p class="inlineDiv">Согласен с <a style="text-decoration: underline #0D47A1; color:#0D47A1;">политикой конфиденциальности</a></p></div>
+                    <label name="labelPassword2" id="labelPassword2">&nbsp;</label>
+					<label name="labelCheckbox" id="labelCheckbox"><input id="checkboxInput" type="checkbox" />Согласен с <p style="color:#0D47A1;">политикой конфиденциальности</p></label>
                     <!-- <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a> -->
                 </form>
                 <a id="registButt" class="blackButton" onclick="registration();" href="#">Зарегистрироваться</a>

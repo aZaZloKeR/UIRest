@@ -172,8 +172,14 @@ input{
     border: 0.5px solid #000;
     height: 40px;
     width: 95%;
-    margin-bottom: 20px;
+    margin-top: 20px;
+	margin-right:30%;
     padding-left: 15px;
+}
+
+.inputAfterLabel
+{
+	margin-top: 5px;
 }
 
 #registButt, #loginButt{
@@ -204,14 +210,11 @@ p.inlineDiv{
     font-size: 15px;
 }
 
-#password2
-{
-	margin:0px;
-}
 
-#labelPassword2
+.registForm label
 {
 	color:red;
+	min-width:50px;
 }
 
 #checkboxInput{
@@ -243,4 +246,15 @@ p.inlineDiv{
 	{
 		opacity:0;
 	}
+}
+
+input[type=checkbox]
+{
+ margin-right:0px;
+}
+
+#labelCheckbox
+{
+	display:block;
+	color:black;
 }
