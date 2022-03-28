@@ -1,5 +1,21 @@
 var isAnimationCompleted = true;
 
+function AddBorderToLoginForm()
+{
+	var loginBlock = document.getElementById('loginFormDiv');
+	var registrationBlock = document.getElementById('regFormDiv');
+	registrationBlock.classList.remove('borderBottom');
+	loginBlock.classList.add('borderBottom');
+}
+
+function AddBorderToRegistrationForm()
+{
+	var loginBlock = document.getElementById('loginFormDiv');
+	var registrationBlock = document.getElementById('regFormDiv');
+	loginBlock.classList.remove('borderBottom');
+	registrationBlock.classList.add('borderBottom');
+}
+
 function ValidMail() 
 {
     var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
