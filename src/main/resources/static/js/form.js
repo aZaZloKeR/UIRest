@@ -1,54 +1,41 @@
 var isAnimationCompleted = true;
 
-function SliderSlideChange(sliderID, sliderDirection, AnimationAddName, AnimationRemoveName)
+function ValidMail() 
 {
-	let sliderCurrent = document.getElementById(sliderID);
-	let slides = sliderCurrent.getElementsByClassName('slider_slide');
-	
-	if (isAnimationCompleted == true)
-	{	
-		isAnimationCompleted = false;
-		for (let i = 0; i < slides.length; i++)
-		{
-			if (slides[i].classList.contains('slider_slide_active'))
-			{
-				SlideSetAnimationName(slides[i],AnimationRemoveName);
-				slides[i].classList.add('slider_slide_inactive');
-				slides[i].classList.remove('slider_slide_active');
-				let prevI = i;
-				
-				if (sliderDirection == 'left')
-				{
-					if (i == 0)
-					{
-						i = slides.length - 1;
-					}
-					else
-					{
-						i--;
-					}
-				}
-				if (sliderDirection == 'right')
-				{
-					if (i == slides.length - 1)
-					{
-						i = 0;
-					}
-					else
-					{
-						i++;
-					}
-				}
-				SlideSetAnimationName(slides[i],AnimationAddName);
-				slides[i].classList.add('slider_slide_active');
-				slides[i].classList.remove('slider_slide_inactive');
-				setTimeout(SlideSetStyleDisplay, 500, slides[prevI], 'none');
-				setTimeout(() => {isAnimationCompleted = true;}, 500);
-				break;
-			}
-		}
+    var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+    var eMail = document.forms.registForm.email;
+	let labelEMail = document.getElementById('labelEMail');
+    var valid = re.test(eMail.value);
+    if (!valid)
+	{
+		labelEMail.innerHTML = 'Введите корректный eMail';
+		return false;
+	}
+	else
+	{
+		labelEMail.innerHTML = '&nbsp;';
+		return true;
 	}
 }
+
+function ValidPhone()
+{
+    //var re = /^[\d\+]{1}[\d]{4,14}$/;
+	var re = /^[\d\+]{1}[\d\(\)\ -]{2,14}\d$/
+    var phone = document.getElementById('phone')
+	let labelPhone = document.getElementById('labelPhone');
+    var valid = re.test(phone.value);
+    if (!valid)
+	{
+		labelPhone.innerHTML = 'Введите корректный номер телефона';
+		return false;
+	}
+	else
+	{
+		labelPhone.innerHTML = '&nbsp;';
+		return true;
+	}
+}  
 
 function onLogin()
 {
@@ -118,7 +105,7 @@ function comparePasswords()
 	}
 	else
 	{
-		labelPassword2.innerHTML = '&#8291;';
+		labelPassword2.innerHTML = '&nbsp;';
 		return true;
 	}
 }
