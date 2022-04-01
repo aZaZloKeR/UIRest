@@ -24,22 +24,33 @@
         <li><a class="nav" href="#">Инициативы</a></li>
         <li><a class="nav" href="#">Правила работы</a></li>
         <li><a class="nav" href="#">Обратная связь</a></li>
-        <li><a id="reg" href="login.html" class="button blueBack" onclick="onLogin()">Войти</a></li>
+        <li><a id="reg" href="login.html" class="button blueBack" onclick="OnLogin()">Войти</a></li>
     </ul>
 </header>
 <main>
     <div class="manu_wrapper">
         <div class="wrapper">
             <div class="chooseRef" >
-                <div id="loginFormDiv" class="chooseRef2 borderBottom" onclick="AddBorderToLoginForm();"> <a class="choose" id="logForm" onclick="onLogin()">Вход</a></div>
-                <div id="regFormDiv" class="chooseRef2" onclick="AddBorderToRegistrationForm();"> <a class="choose" id="regForm" onclick="onRegistration()">Регистрация</a></div>
+                <div id="loginFormDiv" class="chooseRef2 borderBottom" onclick="AddBorderToLoginForm();">
+				<a class="choose" id="logForm" onclick="OnLogin()">Вход</a>
+				</div>
+                <div id="regFormDiv" class="chooseRef2" onclick="AddBorderToRegistrationForm();">
+				<a class="choose" id="regForm" onclick="OnRegistration()">Регистрация</a>
+				</div>
             </div>
             <div id="loginBlock" class="active">
                 <form name="loginForm" id="loginForm" class="loginForm" method="get">
                     <input name="mail" type="email" placeholder="Почта"/>
                     <input name="password" type="password" placeholder="Пароль"/>
                 </form>
-                <a id="loginButt" onclick="login()" class="grayBack button">Войти</a>
+				<div id="loginButtonsDiv">
+					<div class="loginButtons">
+						<a id="loginButt" onclick="Login()" class="grayBack button">Войти</a>
+					</div>
+					<div id="ForgotPassword" class="loginButtons">
+						<a>Восстановить пароль</a>
+					</div>
+				</div>
             </div>
             <div id="registrationBlock" class="inactive">
                 <form name="registForm" class="registForm" method="get">
@@ -55,13 +66,14 @@
                     <label name="labelAdress" id="labelAdress">&nbsp;</label>
 					<input name="email" class="inputAfterLabel" type="email" onchange="ValidMail();" placeholder="Почта"/>
 					<label name="labelEMail" id="labelEMail">&nbsp;</label>
-                    <input name="password1" class="inputAfterLabel" type="password" placeholder="Пароль"/>
-					<input name="password2" type="password" id="password2" onchange="comparePasswords();" placeholder="Повторите пароль"/>
+                    <input name="password1" class="inputAfterLabel" onchange="ValidPassword();" type="password" placeholder="Пароль"/>
+					<label name="labelPassword1" id="labelPassword1">&nbsp;</label>
+					<input name="password2" class="inputAfterLabel" type="password" id="password2" onchange="ComparePasswords();" placeholder="Повторите пароль"/>
                     <label name="labelPassword2" id="labelPassword2">&nbsp;</label>
-					<label name="labelCheckbox" id="labelCheckbox"><input id="checkboxInput" type="checkbox" />Согласен с <a>политикой конфиденциальности</a></label>
                     <!-- <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a> -->
+					<label name="labelCheckbox" id="labelCheckbox"><input id="checkboxInput" type="checkbox" />Согласен с <a>политикой конфиденциальности</a></label>
                 </form>
-                <a id="registButt" class="button grayBack" onclick="registration();" href="#">Зарегистрироваться</a>
+                <a id="registButt" class="button grayBack" onclick="Registration();" href="#">Зарегистрироваться</a>
             </div>
         </div>
     </div>
