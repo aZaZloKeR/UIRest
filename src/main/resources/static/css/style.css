@@ -153,6 +153,18 @@ main{
 	display:none;
 }
 
+#loginButtonsDiv
+{
+	height:150px;
+	display:inline-block;
+}
+
+#ForgotPassword
+{
+display:inline-block;
+
+}
+
 .active
 {
 	animation:AnimationAddForm 0.5s ease;

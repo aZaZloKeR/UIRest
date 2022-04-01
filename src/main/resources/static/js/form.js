@@ -19,9 +19,9 @@ function AddBorderToRegistrationForm()
 function ValidMail() 
 {
     var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
-    var eMail = document.forms.registForm.email;
-	let labelEMail = document.getElementById('labelEMail');
-    var valid = re.test(eMail.value);
+    var eMail = document.forms.registForm.email.value;
+	var labelEMail = document.getElementById('labelEMail');
+    var valid = re.test(eMail);
     if (!valid)
 	{
 		labelEMail.innerHTML = 'Введите корректный eMail';
@@ -37,10 +37,10 @@ function ValidMail()
 function ValidPhone()
 {
     //var re = /^[\d\+]{1}[\d]{4,14}$/;
-	var re = /^[\d\+]{1}[\d\(\)\ -]{2,14}\d$/
-    var phone = document.getElementById('phone')
-	let labelPhone = document.getElementById('labelPhone');
-    var valid = re.test(phone.value);
+	var re = /^[\d\+]{1}[\d\(\)\ -]{2,14}\d$/;
+    var phone = document.forms.registForm.phone.value;
+	var labelPhone = document.getElementById('labelPhone');
+    var valid = re.test(phone);
     if (!valid)
 	{
 		labelPhone.innerHTML = 'Введите корректный номер телефона';
@@ -53,13 +53,13 @@ function ValidPhone()
 	}
 }  
 
-function onLogin()
+function OnLogin()
 {
 	if (isAnimationCompleted == true)
 	{
 		isAnimationCompleted == false;
-		let loginBlock = document.getElementById('loginBlock');
-		let registrationBlock = document.getElementById('registrationBlock');
+		var loginBlock = document.getElementById('loginBlock');
+		var registrationBlock = document.getElementById('registrationBlock');
 		if (loginBlock.classList.contains('inactive'))
 		{
 			registrationBlock.classList.add('inactive');
@@ -72,13 +72,13 @@ function onLogin()
 	}
 }
 
-function onRegistration()
+function OnRegistration()
 {
 	if (isAnimationCompleted == true)
 	{
 		isAnimationCompleted == false;
-		let loginBlock = document.getElementById('loginBlock');
-		let registrationBlock = document.getElementById('registrationBlock');
+		var loginBlock = document.getElementById('loginBlock');
+		var registrationBlock = document.getElementById('registrationBlock');
 		if (registrationBlock.classList.contains('inactive'))
 		{
 			loginBlock.classList.add('inactive');
@@ -91,10 +91,10 @@ function onRegistration()
 	}
 }
 
-async function login()
+async function Login()
 {
-	let mail = document.forms.loginForm.mail.value;
-	let password = document.forms.loginForm.password.value;
+	var mail = document.forms.loginForm.mail.value;
+	var password = document.forms.loginForm.password.value;
 	const url = '/balancer/login';
 
 	const response = await fetch(url, {
@@ -113,11 +113,11 @@ async function login()
 	}
 }
 
-function comparePasswords()
+function ComparePasswords()
 {
-	let password1 = document.forms.registForm.password1.value;
-	let password2 = document.forms.registForm.password2.value;
-	let labelPassword2 = document.getElementById('labelPassword2');
+	var password1 = document.forms.registForm.password1.value;
+	var password2 = document.forms.registForm.password2.value;
+	var labelPassword2 = document.getElementById('labelPassword2');
 	if (password1 != password2)
 	{
 		labelPassword2.innerHTML = 'Пароли не совпадают';
@@ -130,20 +130,39 @@ function comparePasswords()
 	}
 }
 
-async function registration()
+function ValidPassword()
 {
-	let firstName=document.forms.registForm.firstName.value;
-	let lastName=document.forms.registForm.lastName.value;
-	let thirdName=document.forms.registForm.thirdName.value;
-	let birthday=document.forms.registForm.birthDate.value;
-	let password1 = document.forms.registForm.password1.value;
-	let password2 = document.forms.registForm.password2.value;
-	let phoneNumber=document.forms.registForm.phone.value;
-	let address=document.forms.registForm.address.value;
-	let mail=document.forms.registForm.email.value;
-	
-	if (comparePasswords() == false)
+	var password1 = document.forms.registForm.password1.value;
+	var labelPassword1 = document.getElementById('labelPassword1');
+	var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+	var valid = re.test(password1);
+    if (!valid)
 	{
+		labelPassword1.innerHTML = 'Пароль может включать в себя только латинские буквы и цифры. Так же должен содержать минимум 1 цифру, 1 строчную и 1 заглавную буквы.';
+		return false;
+	}
+	else
+	{
+		labelPassword1.innerHTML = '&nbsp;';
+		return true;
+	}
+}
+
+async function Registration()
+{
+	var firstName=document.forms.registForm.firstName.value;
+	var lastName=document.forms.registForm.lastName.value;
+	var thirdName=document.forms.registForm.thirdName.value;
+	var birthday=document.forms.registForm.birthDate.value;
+	var password1 = document.forms.registForm.password1.value;
+	var password2 = document.forms.registForm.password2.value;
+	var phoneNumber=document.forms.registForm.phone.value;
+	var address=document.forms.registForm.address.value;
+	var mail=document.forms.registForm.email.value;
+	
+	if (!ComparePasswords() || !ValidPassword() || !ValidMail() || !ValidPhone())
+	{
+		alert('Добавить какое-то сообщение');
 		return;
 	}
 	
