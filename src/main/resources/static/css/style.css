@@ -1,13 +1,92 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
+body {
+    line-height:1;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+nav ul {
+    list-style:none;
+}
+blockquote, q {
+    quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+input, select {
+    vertical-align:middle;
+}
+/*DropStyles*/
 
 html, body{
     background: #e5e5e5;
+    font-family: "Montserrat", sans-serif;
 }
 
+/*Header*/
 #header{
     background-color: #fff;
     font-style: normal;
@@ -192,4 +271,185 @@ p.inlineDiv{
 #checkboxInput{
     width: 10%;
     height: 16px;
+}
+
+/*Slider*/
+
+#slider{
+    background-image: url("../img/backgroundPaper.png");
+    background-size: auto 800px;
+    height: 800px;
+    width: 100%;
+}
+
+#sliderContent{
+    position: relative;
+    left: 360px; /*18.75%*/
+    right: 360px; /*18.75%*/
+    width: 1200px;
+    height: 100%;
+}
+
+h1{
+    position: absolute;
+    height: 80px;
+
+    /* H1 */
+    font-style: normal;
+    font-weight: 700;/*to high to Roboto*/
+    font-size: 70px;
+    line-height: 80px;    /* identical to box height, or 114% */
+
+    /* black */
+    color: #292935;
+}
+
+.descriptionBlock{
+    position: absolute;
+    width: 360px;
+    height: 88px;
+    top: 244px;
+    display: inline-block;
+
+    /* body/16 */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px; /* or 138% */
+
+    /* black */
+    color: #292935;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin-right: 25px;
+}
+
+.enableBlueButton{
+    /* button */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 30px;
+
+    background: #0D47A1;/* blue */
+    border-radius: 2px;
+
+    font-style: normal;
+    font-weight: 600;/*visually in example ~300*/
+    font-size: 14px;
+    line-height: 15px; /* identical to box height, or 107% */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+}
+
+.slideButton{
+    position: absolute;
+    top: 484px;
+    width: 30px;
+    height: 30px;
+
+    background-color: transparent;
+    border: 2px black solid;
+    border-radius: 15px;
+
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#slideCounter{
+    position: absolute;
+    top: 486px;
+    width: 24px;
+    height: 26px;
+    left: 60px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px; /* identical to box height, or 144% */
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    /* black */
+    color: #292935;
+}
+
+/*Main*/
+
+#content{
+    border: 1px red solid;
+    position: relative;
+    left: 360px; /*18.75%*/
+    right: 360px; /*18.75%*/
+    width: 1200px;
+    height: 1646px;
+}
+
+h2{
+    /* Инициативы */
+    width: 335px;
+    height: 60px;
+
+    /* H2 */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+    /* identical to box height, or 120% */
+
+    /* black */
+    color: #292935;
+
+
+}
+
+#content table{
+    border: 1px black solid;
+    width: 100%;
+}
+
+.lightBlueButton{
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 30px;
+
+    background: #E6EFFF;
+    border: 1px solid #C7DDFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    /* button */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px; /* identical to box height, or 107% */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    /* blue */
+    color: #0D47A1;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#initiativeHeader{
+    margin: 180px 0 60px 0;
+}
+
+/*Footer*/
+footer{
+    background-color: #292935;
+    height: 681px;
 }
