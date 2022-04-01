@@ -16,16 +16,20 @@ async function login()
 	var password = document.forms.loginForm.password.value;
 	const url = '/balancer/login';
 
-	try {
-		const response = await fetch(url, {
-			method: 'POST', // или 'PUT'
-			body: JSON.stringify([mail,password]), // данные могут быть 'строкой' или {объектом}!
-			headers: {'Content-Type': 'application/json'}});
-		const json = await response.json();
-		console.log('Успех:', JSON.stringify(json));
-	} catch (error) {
-		 console.error('Ошибка:', error);
-	}	
+	const response = await fetch(url, {
+		method: 'POST', // или 'PUT'
+		body: JSON.stringify({
+			login: mail,
+			password: password
+		}), // данные могут быть 'строкой' или {объектом}!
+		headers: {'Content-Type': 'application/json'}});
+	const json = await response.json();
+
+
+
+	if (response.ok){
+		console.log('Успех:', response.text());
+	}
 }
 
 async function registration()
