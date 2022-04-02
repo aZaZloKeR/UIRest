@@ -12,11 +12,11 @@ import java.util.Date;
 @Setter
 @ToString
 public class RegistrationUnpackerJson {
-    private String first_name;
-    private String last_name;
-    private String third_name;
+    private String firstName;
+    private String lastName;
+    private String thirdName;
     private Date birthday;
-    private String phone_number;
+    private String phoneNumber;
     private Address address;
     private String mail;
     private String password;
