@@ -23,7 +23,7 @@ html, body{
     text-align: center;
     list-style-type: none;
     vertical-align: middle;
-    padding: 25px 0px;
+    padding: 20px 0px;
 }
 
 li{
@@ -49,19 +49,34 @@ a.nav, a.choose{
     color: #000;
 }
 
-.blackButton{
-    background-color: #000;
+.button{
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     line-height: 15px;
     letter-spacing: 0.05em;
     padding: 12px 30px 13px 30px;
     display: block;
     width: 50px;
+	border-radius:3px;
+}
+
+.blackBack
+{
+	background-color: #000;
+}
+
+.blueBack
+{
+	background-color: #0d47a1;
+}
+
+.grayBack
+{
+	background-color: #97a4b9;
 }
 
 #logo_img{
@@ -97,6 +112,7 @@ a.nav, a.choose{
     outline: none;
     transition: .3s linear;
     color:#848484;
+	margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -113,7 +129,7 @@ main{
 
 .wrapper{
     background-color: #fff;
-    width: 30%;
+    width: 35%;
     position: relative;
     float: left;
     left: 30%;
@@ -133,19 +149,59 @@ main{
 }
 
 #registrationBlock{
-    height: 570px;
+    height: 620px;
+	display:none;
+}
+
+#loginButtonsDiv
+{
+	height:150px;
+	display:inline-block;
+}
+
+#ForgotPassword
+{
+display:inline-block;
+
+}
+
+.active
+{
+	animation:AnimationAddForm 0.5s ease;
+	opacity:1;
+	display:block !important;
+}
+
+.inactive 
+{
+	animation:AnimationRemoveForm 0.5s ease;
+	opacity:0;
 }
 
 div.chooseRef{
     margin-right: 40px;
     margin-top: 40px;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
+	min-height:40px;
+}
+
+.chooseRef2
+{
+	min-height:40px;
+	display:inline-block;
+	margin-right:40px;
+}
+
+.borderBottom
+{
+	border-bottom:3px solid #0d47a1;
 }
 
 a.choose{
     font-size: 24px;
     color:#848484;
-    margin-right: 40px;
+	font-weight:600;
+	color:#0d47a1;
 }
 
 a.choose:focus{
@@ -154,16 +210,27 @@ a.choose:focus{
 }
 
 input{
-    color:#848484;
+    color:#97a4b9;
     border: 0.5px solid #000;
     height: 40px;
     width: 95%;
-    margin-bottom: 20px;
+    margin-top: 20px;
+	margin-right:30%;
     padding-left: 15px;
+	font-weight:500;
+}
+
+input::placeholder {
+  color: #97a4b9;
+}
+
+.inputAfterLabel
+{
+	margin-top: 5px;
 }
 
 #registButt, #loginButt{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #registButt{
@@ -171,15 +238,16 @@ input{
 }
 
 .inlineInput{
-    width: 95%;
+    width: 100%;
     align-items: center;
     white-space: nowrap;
 }
 
 .initials{
-    width: 29%;
+    width: 27%;
     display: inline-block;
     position: relative;
+	margin-right: 4px;
 }
 
 p.inlineDiv{
@@ -189,7 +257,57 @@ p.inlineDiv{
     font-size: 15px;
 }
 
+
+.registForm label
+{
+	color:red;
+	min-width:50px;
+}
+
 #checkboxInput{
     width: 10%;
     height: 16px;
+	margin-top: 15px;
+	box-sizing: border-box;
+}
+
+@keyframes AnimationAddForm
+{
+	0%
+	{
+		opacity:0;
+	}
+	100%
+	{
+		opacity:1;
+	}
+}
+
+@keyframes AnimationRemoveForm
+{
+	0%
+	{
+		opacity:1;
+	}
+	100%
+	{
+		opacity:0;
+	}
+}
+
+input[type=checkbox]
+{
+ margin-right:0px;
+}
+
+#labelCheckbox
+{
+	display:block;
+	color:black;
+	font-weight:600;
+}
+
+#labelCheckbox a
+{
+	color: #0d47a1;
 }

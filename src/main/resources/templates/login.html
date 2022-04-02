@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/" lang="ru">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Инициативы Дубны</title>
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
-<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"-->
-<!--          th:href="@{https://fonts.googleapis.com/css2(family=Roboto:${__#{wght}__300&display=swap)}}"-->
-<!--          rel="stylesheet">-->
+	<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
     <script src="../static/js/form.js" th:src="@{/js/form.js}" type="text/javascript"></script>
-</head>
+    <script src="./form.js"></script></head>
 <body>
 <header id="header">
     <ul class="nav">
         <li>
             <div id="logo_info">
-                <img id="logo_img" th:src="@{/img/Vect.png}"/>
-                <img id="logo_line" th:src="@{/img/Line1.png}"/>
+                <img id="logo_img" src="./IMG/Шапка/Vect.png" />
+                <img id="logo_line" src="./IMG/Шапка/Line%201.png" />
                 <p id="sait_name"><strong>Инициативы<br/>жителей Дубны</strong></p>
             </div>
         </li>
@@ -24,46 +21,59 @@
                 <input type="search" placeholder="Поиск" name="search" class="search_box">
             </form>
         </li>
-        <li><a class="nav" href="#">Предложить инициативу</a></li>
+        <li><a class="nav" href="#">Инициативы</a></li>
         <li><a class="nav" href="#">Правила работы</a></li>
         <li><a class="nav" href="#">Обратная связь</a></li>
-        <li><a id="reg" href="login" class="blackButton" onclick="onLogin()">Войти</a></li>
+        <li><a id="reg" href="login.html" class="button blueBack" onclick="OnLogin()">Войти</a></li>
     </ul>
 </header>
 <main>
     <div class="manu_wrapper">
         <div class="wrapper">
-            <div class="chooseRef">
-                <a class="choose" id="logForm" onclick="onLogin()">Вход</a>
-                <a class="choose" id="regForm" onclick="onRegistration()">Регистрация</a>
+            <div class="chooseRef" >
+                <div id="loginFormDiv" class="chooseRef2 borderBottom" onclick="AddBorderToLoginForm();">
+				<a class="choose" id="logForm" onclick="OnLogin()">Вход</a>
+				</div>
+                <div id="regFormDiv" class="chooseRef2" onclick="AddBorderToRegistrationForm();">
+				<a class="choose" id="regForm" onclick="OnRegistration()">Регистрация</a>
+				</div>
             </div>
-            <div id="loginBlock">
+            <div id="loginBlock" class="active">
                 <form name="loginForm" id="loginForm" class="loginForm" method="get">
                     <input name="mail" type="email" placeholder="Почта"/>
                     <input name="password" type="password" placeholder="Пароль"/>
                 </form>
-                <a id="loginButt" onclick="login()" class="blackButton">Войти</a>
+				<div id="loginButtonsDiv">
+					<div class="loginButtons">
+						<a id="loginButt" onclick="Login()" class="grayBack button">Войти</a>
+					</div>
+					<div id="ForgotPassword" class="loginButtons">
+						<a>Восстановить пароль</a>
+					</div>
+				</div>
             </div>
-            <div id="registrationBlock" style="display: none;">
+            <div id="registrationBlock" class="inactive">
                 <form name="registForm" class="registForm" method="get">
                     <div class="inlineInput">
-                        <input name="lastName" class="initials" style="margin-right:1%;" type="text"
-                               placeholder="Фaмилия"/>
-                        <input name="firstName" class="initials" style="margin-right:1%;" type="text"
-                               placeholder="Имя"/>
+                        <input name="lastName" class="initials" type="text" placeholder="Фaмилия"/>
+                        <input name="firstName" class="initials" type="text" placeholder="Имя"/>
                         <input name="thirdName" class="initials" type="text" placeholder="Отчество"/>
                     </div>
                     <input name="birthDate" type="text" placeholder="Дата рождения"/>
-                    <input name="phone" type="text" placeholder="Телефон"/>
-                    <input name="address" type="text" placeholder="Адрес проживания"/>
-                    <input name="email" type="email" placeholder="Почта"/>
-                    <input name="password" type="password" placeholder="Пароль"/>
-                    <div class="inlineInput"><input id="checkboxInput" class="inlineDiv" type="checkbox"/>
-                        <p class="inlineDiv">Согласен с <a style="text-decoration: underline #0D47A1; color:#0D47A1;">политикой
-                            конфиденциальности</a></p></div>
+                    <input name="phone" id="phone" onchange="ValidPhone()" type="text" placeholder="Телефон"/>
+					<label name="labelPhone" id="labelPhone">&nbsp;</label>
+                    <input name="address" class="inputAfterLabel" type="text" placeholder="Адрес проживания"/>
+                    <label name="labelAdress" id="labelAdress">&nbsp;</label>
+					<input name="email" class="inputAfterLabel" type="email" onchange="ValidMail();" placeholder="Почта"/>
+					<label name="labelEMail" id="labelEMail">&nbsp;</label>
+                    <input name="password1" class="inputAfterLabel" onchange="ValidPassword();" type="password" placeholder="Пароль"/>
+					<label name="labelPassword1" id="labelPassword1">&nbsp;</label>
+					<input name="password2" class="inputAfterLabel" type="password" id="password2" onchange="ComparePasswords();" placeholder="Повторите пароль"/>
+                    <label name="labelPassword2" id="labelPassword2">&nbsp;</label>
                     <!-- <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a> -->
+					<label name="labelCheckbox" id="labelCheckbox"><input id="checkboxInput" type="checkbox" />Согласен с <a>политикой конфиденциальности</a></label>
                 </form>
-                <a id="registButt" class="blackButton" href="#">Зарегистрироваться</a>
+                <a id="registButt" class="button grayBack" onclick="Registration();" href="#">Зарегистрироваться</a>
             </div>
         </div>
     </div>
