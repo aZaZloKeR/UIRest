@@ -31,10 +31,10 @@
     <div class="manu_wrapper">
         <div class="wrapper">
             <div class="chooseRef" >
-                <div id="loginFormDiv" class="chooseRef2 borderBottom" onclick="AddBorderToLoginForm();">
+                <div id="loginFormDiv" class="chooseRef2 borderBottom">
 				<a class="choose" id="logForm" onclick="OnLogin()">Вход</a>
 				</div>
-                <div id="regFormDiv" class="chooseRef2" onclick="AddBorderToRegistrationForm();">
+                <div id="regFormDiv" class="chooseRef2">
 				<a class="choose" id="regForm" onclick="OnRegistration()">Регистрация</a>
 				</div>
             </div>
@@ -57,7 +57,7 @@
                     <div class="inlineInput">
                         <input name="lastName" class="initials" type="text" placeholder="Фaмилия"/>
                         <input name="firstName" class="initials" type="text" placeholder="Имя"/>
-                        <input name="thirdName" class="initials" type="text" placeholder="Отчество"/>
+                        <input name="thirdName" id="thirdName" class="initials" type="text" placeholder="Отчество"/>
                     </div>
                     <input name="birthDate" type="text" placeholder="Дата рождения"/>
                     <input name="phone" id="phone" onchange="ValidPhone()" type="text" placeholder="Телефон"/>

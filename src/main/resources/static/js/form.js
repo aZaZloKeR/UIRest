@@ -57,6 +57,7 @@ function OnLogin()
 {
 	if (isAnimationCompleted == true)
 	{
+		AddBorderToLoginForm();
 		isAnimationCompleted == false;
 		var loginBlock = document.getElementById('loginBlock');
 		var registrationBlock = document.getElementById('registrationBlock');
@@ -76,6 +77,7 @@ function OnRegistration()
 {
 	if (isAnimationCompleted == true)
 	{
+		AddBorderToRegistrationForm()
 		isAnimationCompleted == false;
 		var loginBlock = document.getElementById('loginBlock');
 		var registrationBlock = document.getElementById('registrationBlock');
@@ -97,20 +99,16 @@ async function Login()
 	var password = document.forms.loginForm.password.value;
 	const url = '/balancer/login';
 
-	const response = await fetch(url, {
-		method: 'POST', // или 'PUT'
-		body: JSON.stringify({
-			login: mail,
-			password: password
-		}), // данные могут быть 'строкой' или {объектом}!
-		headers: {'Content-Type': 'application/json'}});
-	const json = await response.json();
-
-
-
-	if (response.ok){
-		console.log('Успех:', response.text());
-	}
+	try {
+		const response = await fetch(url, {
+			method: 'POST', // или 'PUT'
+			body: JSON.stringify([mail,password]), // данные могут быть 'строкой' или {объектом}!
+			headers: {'Content-Type': 'application/json'}});
+		const json = await response.json();
+		console.log('Успех:', JSON.stringify(json));
+	} catch (error) {
+		 console.error('Ошибка:', error);
+	}	
 }
 
 function ComparePasswords()
