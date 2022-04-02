@@ -136,12 +136,13 @@ main{
     margin-top: 7%;
     margin-bottom: 5%;
     padding-left: 5%;
+    overflow:hidden;
 }
 
 #registrationBlock, #loginBlock{
     display: inline-block;
     width: 80%;
-    height: 80%;
+
 }
 
 #loginBlock{
@@ -149,7 +150,7 @@ main{
 }
 
 #registrationBlock{
-    height: 620px;
+
 	display:none;
 }
 
@@ -218,6 +219,7 @@ input{
 	margin-right:30%;
     padding-left: 15px;
 	font-weight:500;
+    box-sizing: border-box;
 }
 
 input::placeholder {
@@ -234,24 +236,31 @@ input::placeholder {
 }
 
 #registButt{
-    width: 160px;
+    width: 180px;
+    margin-bottom: 20px;
 }
 
 .inlineInput{
-    width: 100%;
-    align-items: center;
-    white-space: nowrap;
+    width: 95%;
+    display:flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
 }
 
 .initials{
-    width: 27%;
-    display: inline-block;
+    display: flex;
+    flex: 0 0 32.66%;
     position: relative;
-	margin-right: 4px;
+	margin-right: 1%;
+}
+
+#thirdName
+{
+    margin-right: 0px;
 }
 
 p.inlineDiv{
-    display: inline-block;
+    display: flex;
     position: relative;
     width: 90%;
     font-size: 15px;
