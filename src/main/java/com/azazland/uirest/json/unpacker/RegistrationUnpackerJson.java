@@ -17,11 +17,11 @@ public class RegistrationUnpackerJson {
     private Date birthday;
     private String phone_number;
     private JSONObject address;
-    private String street_type;
+/*    private String street_type;
     private String house;
     private String corps;
-    private String apartment;
-    private String login;
+    private String apartment;*/
+    private String mail;
     private String password;
 
 }

@@ -54,14 +54,6 @@ public class RestController {
         response.addCookie(cookieForFront);
         return "index";
     }*/
-    @GetMapping(value = "ui/login")
-    public String loginPage(){
-        return "login";
-    }
-    @GetMapping(value = "ui/registration")
-    public String registrationPage(){
-        return "registration";
-    }
     @PutMapping(value = "/balancer/users/{userId}")
     public @ResponseBody String updateUser(@PathVariable int userId,RegistrationUnpackerJson registrationUnpackerJson,
                                            HttpServletResponse response){
