@@ -57,6 +57,7 @@ function OnLogin()
 {
 	if (isAnimationCompleted == true)
 	{
+		AddBorderToLoginForm();
 		isAnimationCompleted == false;
 		var loginBlock = document.getElementById('loginBlock');
 		var registrationBlock = document.getElementById('registrationBlock');
@@ -76,6 +77,7 @@ function OnRegistration()
 {
 	if (isAnimationCompleted == true)
 	{
+		AddBorderToRegistrationForm()
 		isAnimationCompleted == false;
 		var loginBlock = document.getElementById('loginBlock');
 		var registrationBlock = document.getElementById('registrationBlock');
