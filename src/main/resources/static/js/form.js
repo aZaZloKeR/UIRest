@@ -136,12 +136,30 @@ function ValidPassword()
 	var valid = re.test(password1);
     if (!valid)
 	{
-		labelPassword1.innerHTML = 'Пароль может включать в себя только латинские буквы и цифры. Так же должен содержать минимум 1 цифру, 1 строчную и 1 заглавную буквы.';
+		labelPassword1.innerHTML = 'Введите корректную дату рождения';
 		return false;
 	}
 	else
 	{
 		labelPassword1.innerHTML = '&nbsp;';
+		return true;
+	}
+}
+
+function ValidBirthDate()
+{
+	var birthDate = document.forms.registForm.birthDate.value;
+	var labelBirthDate = document.getElementById('labelBirthDate');
+	var re = /^((0[1-9]|[12]\d)\.(0[1-9]|1[012])|(30\.0[13-9]|1[012]|31\.(0[13578]|1[02])))\.(19|20)\d\d$/;
+	var valid = re.test(birthDate);
+	if (!valid)
+	{
+		labelBirthDate.innerHTML = 'Пароль может включать в себя только латинские буквы и цифры. Так же должен содержать минимум 1 цифру, 1 строчную и 1 заглавную буквы.';
+		return false;
+	}
+	else
+	{
+		labelBirthDate.innerHTML = '&nbsp;';
 		return true;
 	}
 }

@@ -59,8 +59,9 @@
                         <input name="firstName" class="initials" type="text" placeholder="Имя"/>
                         <input name="thirdName" id="thirdName" class="initials" type="text" placeholder="Отчество"/>
                     </div>
-                    <input name="birthDate" type="text" placeholder="Дата рождения"/>
-                    <input name="phone" id="phone" onchange="ValidPhone()" type="text" placeholder="Телефон"/>
+                    <input name="birthDate" onchange="ValidBirthDate();" type="text" placeholder="Дата рождения в формате ДД.ММ.ГГГГ"/>
+                    <label name="labelBirthDate" id="labelBirthDate">&nbsp;</label>
+                    <input name="phone" class="inputAfterLabel" id="phone" onchange="ValidPhone()" type="text" placeholder="Телефон"/>
 					<label name="labelPhone" id="labelPhone">&nbsp;</label>
                     <input name="address" class="inputAfterLabel" type="text" placeholder="Адрес проживания"/>
                     <label name="labelAdress" id="labelAdress">&nbsp;</label>
