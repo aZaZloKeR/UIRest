@@ -55,7 +55,7 @@ public class RestController {
         return "index";
     }*/
     @PutMapping(value = "/balancer/users/{userId}")
-    public @ResponseBody String updateUser(@PathVariable int userId,RegistrationUnpackerJson registrationUnpackerJson,
+    public String updateUser(@PathVariable int userId,@RequestBody RegistrationUnpackerJson registrationUnpackerJson,
                                            HttpServletResponse response){
         try {
             HttpClient httpClient = HttpClient.newHttpClient();
@@ -64,7 +64,7 @@ public class RestController {
                     .PUT(HttpRequest.BodyPublishers.ofString(registrationUnpackerJson.toString()))
                     .build();
             HttpServletResponse httpResponse = (HttpServletResponse)httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            response.addCookie(new Cookie("sessionToken",httpResponse.getHeader("Set-Cookie")));//как-то прикрутить куки которые пришли от кожемяки к кукам которые отправляем алексу(вроде сделанно)
+            response.addCookie(new Cookie("sessionToken",httpResponse.getHeader("Set-Cookie")));
         } catch (Exception e) {
             e.printStackTrace();
         }
