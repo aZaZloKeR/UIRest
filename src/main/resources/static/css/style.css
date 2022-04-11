@@ -12,6 +12,23 @@ p{
     font-size: 14px;
 }
 
+a{
+    cursor: pointer;
+    color: #0d47a1;
+    text-decoration: none;
+}
+
+li{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0px 15px;
+}
+
+/*
+    HEADER
+*/
 #header{
     background-color: #fff;
     font-style: normal;
@@ -23,21 +40,12 @@ p{
     height: 90px;
 }
 
-.nav {
+.nav{
     text-align: center;
     list-style-type: none;
     vertical-align: middle;
     padding: 22px 0px;
 }
-
-li{
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    font-weight: bolder;
-    margin: 0px 15px;
-}
-
 
 #sait_name{
     height: 25px;
@@ -48,52 +56,6 @@ li{
     font-size: 14px;
     letter-spacing: 0.05em;
     text-align: left;
-}
-
-a{
-    cursor: pointer;
-    color: #0d47a1;
-    text-decoration: none;
-}
-
-a.nav, a.choose{
-    color: #000;
-}
-
-.button{
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: 0.08em;
-    padding: 13px 30px 12px 30px;
-    display: block;
-    width: 110px;
-    border-radius:3px;
-    border: none;
-    cursor: pointer;
-}
-
-.blackBack
-{
-    background-color: #000;
-}
-
-.blueBack
-{
-    background-color: #0d47a1;
-}
-
-.grayBack
-{
-    background-color: #97a4b9;
-}
-
-#navButt{
-    width: 50px !important;
 }
 
 #logo_img{
@@ -123,6 +85,83 @@ a.nav, a.choose{
     padding-bottom: 0;
 }
 
+a.nav, a.choose{
+    color: #000;
+}
+
+/*
+    BUTTONS
+*/
+.button{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
+    padding: 13px 30px 12px 30px;
+    display: block;
+    width: 110px;
+    border-radius:3px;
+    border: none;
+    cursor: pointer;
+}
+
+.blackBack{
+    background-color: #000;
+}
+
+.blueBack{
+    background-color: #0d47a1;
+}
+
+.grayBack{
+    background-color: #97a4b9;
+}
+
+#navButt{
+    width: 50px !important;
+}
+
+#registButt, #loginButt{
+    margin-top: 20px;
+    height: 45px;
+}
+
+#loginButt{
+    float: left;
+}
+
+div.forgotPassword{
+    float: right;
+    margin-top: 40px;
+}
+
+a.forgotPassword{
+    border-bottom: 2px solid #0d47a1;
+    font-size: 16px;
+}
+
+#registButt{
+    width: 225px;
+}
+
+.redWarning{
+    border: 2px solid #E14756 !important;
+    color: #EE616F !important;
+}
+
+#mainButt{
+    width: 110px;
+    margin-left: 30%;
+    margin-top: 60px;
+}
+
+/*
+    REGISTRATION AND LOGIN BLOCKS
+*/
 .wrapper{
     background-color: #fff;
     width: 35%;
@@ -142,12 +181,7 @@ a.nav, a.choose{
     height: 80%;
 }
 
-/*#loginBlock{*/
-/*    height: 280px;*/
-/*}*/
-
 #registrationBlock{
-    /*height: 620px;*/
     display:none;
 }
 
@@ -162,6 +196,30 @@ a.nav, a.choose{
     opacity:0;
 }
 
+@keyframes AnimationAddForm{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+
+@keyframes AnimationRemoveForm{
+    0%{opacity:1;}
+    100%{opacity:0;}
+}
+
+.active{
+    animation:AnimationAddForm 0.5s ease;
+    opacity:1;
+    display:block !important;
+}
+
+.inactive{
+    animation:AnimationRemoveForm 0.5s ease;
+    opacity:0;
+}
+
+/*
+    SWITCH LINKS
+*/
 .borderBottom{
     border-bottom:3px solid #0d47a1;
 }
@@ -186,18 +244,15 @@ div.chooseDiv{
     color: #97A4B9;
 }
 
-/*a.choose:focus{*/
-/*    color:#97A4B9;*/
-/*    border-bottom: 2px solid #000;*/
-/*}*/
-
+/*
+    INPUTS
+*/
 input{
     color:#97a4b9;
     border: 1px solid #DEDEDE;
     height: 60px;
     width: 95%;
     margin-top: 20px;
-    /*margin-right:30%;*/
     padding-left: 15px;
     font-weight:500;
 }
@@ -206,8 +261,7 @@ input::placeholder {
     color: #97a4b9;
 }
 
-.inputAfterLabel
-{
+.inputAfterLabel{
     margin-top: 5px;
 }
 
@@ -233,30 +287,9 @@ p.inlineDiv{
     font-size: 15px;
 }
 
-@keyframes AnimationAddForm
-{
-    0%{opacity:0;}
-    100%{opacity:1;}
-}
-
-@keyframes AnimationRemoveForm
-{
-    0%{opacity:1;}
-    100%{opacity:0;}
-}
-
-.active
-{
-    animation:AnimationAddForm 0.5s ease;
-    opacity:1;
-    display:block !important;
-}
-
-.inactive
-{
-    animation:AnimationRemoveForm 0.5s ease;
-    opacity:0;
-}
+/*
+    CHECKBOX STYLING
+*/
 
 /*input[type=checkbox]*/
 /*{*/
@@ -325,6 +358,10 @@ p.inlineDiv{
     font-size: 16px;
 }
 
+/*
+    SUCCESSFUL REGISTRATION
+ */
+
 div.registInfo{
     height: 210px;
     text-align: center;
@@ -340,40 +377,6 @@ div.welcome{
     width: 65%;
 }
 
-#mainButt{
-    width: 110px;
-    margin-left: 30%;
-    margin-top: 60px;
-}
-
 #thanks{
     margin-top: 30px;
-}
-
-.redWarning{
-    border: 2px solid #E14756 !important;
-    color: #EE616F !important;
-}
-
-#registButt, #loginButt{
-    margin-top: 20px;
-    height: 45px;
-}
-
-#loginButt{
-    float: left;
-}
-
-div.forgotPassword{
-    float: right;
-    margin-top: 40px;
-}
-
-a.forgotPassword{
-    border-bottom: 2px solid #0d47a1;
-    font-size: 16px;
-}
-
-#registButt{
-    width: 225px;
 }
