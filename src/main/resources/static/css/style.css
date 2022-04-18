@@ -284,22 +284,19 @@ p.inlineDiv{
 
 #slider{
     background-image: url("../img/backgroundPaper.png");
-    background-size: auto 800px;
+    background-size: 100% 800px;
     height: 800px;
     width: 100%;
 }
 
 #sliderContent{
     position: relative;
-    left: 360px; /*18.75%*/
-    right: 360px; /*18.75%*/
-    width: 1200px;
+    padding: 140px 18.75% 0;
     height: 100%;
 }
 
 h1{
-    position: absolute;
-    height: 80px;
+    min-height: 80px;
 
     /* H1 */
     font-style: normal;
@@ -309,14 +306,15 @@ h1{
 
     /* black */
     color: #292935;
+
+    margin-bottom: 24px;
 }
 
 .descriptionBlock{
-    position: absolute;
-    width: 360px;
-    height: 88px;
-    top: 244px;
     display: inline-block;
+    width: 360px;
+
+    margin-bottom: 52px;
 
     /* body/16 */
     font-style: normal;
@@ -334,26 +332,28 @@ h1{
     margin-right: 25px;
 }
 
-.slideButton{
-    position: absolute;
-    top: 484px;
+.pagination{
+    margin-top: 55px;
+}
+
+.slideButtonLeft{
     width: 30px;
     height: 30px;
 
+    background-image: url("../img/pagginationLeft.svg");
     background-color: transparent;
-    border: 2px black solid;
-    border-radius: 15px;
+}
 
-    font-weight: bold;
-    font-size: 15px;
+.slideButtonRight{
+    width: 30px;
+    height: 30px;
+
+    background-image: url("../img/pagginationRight.svg");
+    background-color: transparent;
 }
 
 #slideCounter{
-    position: absolute;
-    top: 486px;
     width: 24px;
-    height: 26px;
-    left: 60px;
 
     font-style: normal;
     font-weight: 500;
@@ -364,17 +364,16 @@ h1{
 
     /* black */
     color: #292935;
+
+    margin: 0 30px;
+
+    vertical-align: bottom;
 }
 
 /*Main*/
-
 #content{
-    border: 1px red solid;
     position: relative;
-    left: 340px; /*18.75%*/
-    right: 340px; /*18.75%*/
-    width: 1240px;
-    height: 1646px;
+    padding: 0 18.75% ;
 }
 
 h2{
@@ -414,8 +413,7 @@ h2{
 }
 
 #initiativeHeader{
-    margin: 180px 20px 40px 20px;
-    width: 1200px;
+    margin: 180px 20px 20px;
     text-align: justify;
 }
 #initiativeHeader ul li  {
@@ -432,7 +430,7 @@ ul li.helper {
     width: 100%;
     /*height: 100%;*/
     object-fit: contain;
-    height: 262px;
+    height: auto;
     display: block;
 }
 
@@ -468,13 +466,40 @@ ul li.helper {
 }
 .likeUl{
     cursor: pointer;
-    max-width: 50%;
+    display: inline;
 }
 .likeUl:hover .likeText{
     border-bottom: 2px #0D47A1 solid;
 }
 .likeUl:disabled {
     border: red 1px solid;
+}
+
+.allInitiatives{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+
+    margin: 120px 0 250px;
+}
+
+.allInitiatives span{
+    /* body/16 */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 138% */
+
+    /* blue */
+    color: #0D47A1;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
 }
 
 /*Footer*/

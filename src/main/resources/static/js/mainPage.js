@@ -92,8 +92,6 @@ function CreateLikeBlock(initiativeId, numberOfLikes) {
         } else {
             likeAddFlag.style.display = "none";
         }
-
-
     };
 
     return ul;
