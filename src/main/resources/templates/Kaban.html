@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Инициативы Дубны</title>
+    <link href="../static/css/Kaban.css" rel="stylesheet" type="text/css"/>
+    <script src="../static/js/Kaban.js"></script>
+</head>
+<body>
+<header>
+    <img style="" class="logo" src="../static/img/QLogo.png">
+    <nav>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">
+                <img style="pointer-events: none" src="../static/img/menu.svg" alt="">
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <ul class="block_in_line">
+        <li class="article">
+            <article class="article">
+                <img src="../static/img/exampleInit1.png" alt=""/>
+                <h2>Some text</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                    aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                    fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                    vel velit!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                    aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                    fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                    vel velit!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                    aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                    fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                    vel velit!
+                </p>
+            </article>
+        </li>
+        <li class="article">
+            <article class="article">
+                <img src="../static/img/exampleInit1.png" alt=""/>
+                <h2>Some text</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                    aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                    fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                    vel velit!
+                </p>
+            </article>
+        </li>
+        <li class="article">
+            <article class="article">
+                <img src="../static/img/exampleInit1.png" alt=""/>
+                <h2>Some text</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                    aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                    fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                    vel velit!
+                </p>
+            </article>
+        </li>
+        <li class="block_helper"></li>
+    </ul>
+
+    <div class='slider' id="slider">
+        <div class="slides_and_buttons">
+            <div class="slide slide_active">
+                <img id="hell_img" class="img" src="../static/img/hell.jpg"/>
+            </div>
+            <div class="slide slide_inactive">
+                <img id="arch_img" class="img" src="../static/img/Arch.jpg"/>
+            </div>
+            <div class="slide slide_inactive">
+                <img id="arch_devil_img" class="img" src="../static/img/Arch_Devil.jpg"/>
+            </div>
+            <div class="slide slide_inactive">
+                <img id="inquisitor_img" class="img" src="../static/img/Inquisitor.jpg"/>
+            </div>
+            <div class="slide slide_inactive">
+                <img id="what_img" class="img" src="../static/img/what.jpg"/>
+            </div>
+            <button class="slider_button_left slider_button" onclick="changeSlide('slider','left');">&lt;</button>
+            <button class="slider_button_right slider_button" onclick="changeSlide('slider','right');">&gt;</button>
+        </div>
+        <div class = "slider_text">
+            <h2>Some text</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                vel velit!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                vel velit!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                vel velit!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                vel velit!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias
+                aliquam cupiditate dignissimos distinctio esse, eum excepturi exercitationem
+                fugiat iusto laudantium molestiae nesciunt obcaecati, optio quae qui repudiandae
+                vel velit!
+
+            </p>
+        </div>
+    </div>
+
+</main>
+<footer>
+    <form>
+        <span>Обратная связь</span>
+        <input class="placeholder" name="name" placeholder="Имя">
+        <input class="placeholder" name="email" placeholder="Почта">
+        <input class="placeholder" name="question" placeholder="Ваш вопрос">
+        <button style="margin: 5px 15px;" class="simpleButton">Отправить</button>
+    </form>
+</footer>
+</body>
+</html>

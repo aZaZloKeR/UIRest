@@ -708,7 +708,7 @@ footer .placeholder{
     background: #97A4B9;
 }
 
-.secondaryButton{
+.simpleButton{
     /* button */
 
     /* Auto layout */
@@ -740,12 +740,12 @@ footer .placeholder{
     flex-grow: 0;
     margin: 0px 10px;
 }
-.secondaryButton:hover{
+.simpleButton:hover{
     background: #0D47A1;
     color: white;
     border: none;
 }
-.secondaryButton:disabled{
+.simpleButton:disabled{
     background: #DBDBDB;
     color: #97A4B9;
     border: #DBDBDB 1px solid;
