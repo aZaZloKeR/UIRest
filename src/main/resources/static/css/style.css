@@ -284,15 +284,32 @@ p.inlineDiv{
 
 #slider{
     background-image: url("../img/backgroundPaper.png");
-    background-size: 100% 800px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 800px;
     width: 100%;
 }
 
 #sliderContent{
     position: relative;
-    padding: 140px 18.75% 0;
+    /*padding: 140px 18.75% 0;*/
     height: 100%;
+}
+@media (min-width: 1920px) {
+    #sliderContent{
+        padding: 140px 360px 0;
+    }
+}
+@media (min-width:1600px) and (max-width: 1919px) {
+    #sliderContent{
+        padding: 140px 18.75% 0;
+    }
+}
+@media (max-width: 1599px) {
+    #sliderContent{
+        padding: 140px 1% 0;
+    }
 }
 
 h1{
@@ -373,7 +390,22 @@ h1{
 /*Main*/
 #content{
     position: relative;
-    padding: 0 18.75% ;
+    padding: 0 360px ;
+}
+@media (min-width: 1920px) {
+    #content{
+        padding: 0 340px;
+    }
+}
+@media (min-width:1600px) and (max-width: 1919px) {
+    #content{
+        padding: 0 18.75%;
+    }
+}
+@media (max-width: 1599px) {
+    #content{
+        padding: 0 1%;
+    }
 }
 
 h2{
@@ -432,6 +464,11 @@ ul li.helper {
     object-fit: contain;
     height: auto;
     display: block;
+}
+@media (max-width: 1599px) {
+    .initiativeImage{
+        object-fit: fill;
+    }
 }
 
 .initiativeContent{
@@ -508,12 +545,27 @@ footer{
     display: block;
     flex-direction: column;
     align-items: flex-start;
-    padding: 120px 360px 60px;
+    /*padding: 120px 360px 60px;*/
 
     /* black */
     background: #292935;
 
     color: white;
+}
+@media (min-width: 1920px) {
+    footer{
+        padding: 120px 360px 60px;
+    }
+} 
+@media (min-width:1600px) and (max-width: 1919px) {
+    footer{
+        padding: 120px 18.75% 60px;
+    }
+}
+@media (max-width: 1599px) {
+    footer{
+        padding: 120px 1% 60px;
+    }
 }
 
 footer .left{
