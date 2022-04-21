@@ -103,14 +103,21 @@ html, body{
     line-height: 15px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    height: 90px;
+
+    padding: 25px 360px;
+}
+@media (max-width: 1200px) {
+    #header{
+        padding: 25px 1%;
+    }
+    ul li{
+    }
 }
 
 .nav {
     text-align: center;
     list-style-type: none;
     vertical-align: middle;
-    padding: 25px 0px;
 }
 
 li{
@@ -451,9 +458,12 @@ h2{
 
 #initiativeHeader{
     margin: 180px 20px 20px;
+
+}
+ul{
     text-align: justify;
 }
-#initiativeHeader ul li  {
+ul li  {
     display: inline-block;
     text-align: left;
 }
@@ -624,6 +634,7 @@ footer textarea{
 }
 
 footer h2{
+    display: inline-block;
     position: relative;
     width: 100%;
     margin-bottom: 20px;
