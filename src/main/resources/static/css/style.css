@@ -42,6 +42,7 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    text-decoration: none;
 }
 /* change colours to suit your needs */
 ins {
@@ -342,10 +343,12 @@ h1{
     /* black */
     color: #292935;
 
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    vertical-align: top;
+
+    /*!* Inside auto layout *!*/
+    /*flex: none;*/
+    /*order: 1;*/
+    /*flex-grow: 0;*/
     margin-right: 25px;
 }
 
@@ -353,17 +356,19 @@ h1{
     margin-top: 55px;
 }
 
-.slideButtonLeft{
+#slideButtonLeft{
     width: 30px;
     height: 30px;
+    cursor: pointer;
 
     background-image: url("../img/pagginationLeft.svg");
     background-color: transparent;
 }
 
-.slideButtonRight{
+#slideButtonRight{
     width: 30px;
     height: 30px;
+    cursor: pointer;
 
     background-image: url("../img/pagginationRight.svg");
     background-color: transparent;
@@ -536,6 +541,7 @@ ul li.helper {
     flex: none;
     order: 0;
     flex-grow: 0;
+
     margin: 0px 10px;
 }
 
@@ -730,6 +736,7 @@ footer .placeholder{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+
     padding: 15px 30px;
 
     /* blue */
@@ -747,11 +754,6 @@ footer .placeholder{
 
     /* white */
     color: #FFFFFF;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 .primaryButton:hover{
     background: #306DCC
@@ -764,9 +766,9 @@ footer .placeholder{
     /* button */
 
     /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*align-items: flex-start;*/
     padding: 15px 30px;
 
     background: #E6EFFF;
@@ -785,12 +787,6 @@ footer .placeholder{
 
     /* blue */
     color: #0D47A1;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 10px;
 }
 .secondaryButton:hover{
     background: #0D47A1;
