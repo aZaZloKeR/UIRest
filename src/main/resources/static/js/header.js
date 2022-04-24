@@ -4,7 +4,7 @@ var headerText =
     '        <li class="liHeader">\n' +
     '            <div id="logo_info">\n' +
     '                <img id="logo_img" src="../static/img/Vect.png" th:href="@{/img/Vect.png}" />\n' +
-    '                <img id="logo_line" src="../static/img/Line%201.png" th:href="@{/img/Line%201.png}" />\n' +
+    '                <img id="logo_line" src="../static/img/Line1.png" th:href="@{/img/Line1.png}" />\n' +
     '                <a href="./index.html"><p id="sait_name"><strong>Инициативы<br/>жителей Дубны</strong></p></a>\n' +
     '            </div>\n' +
     '        </li>\n' +

@@ -17,37 +17,41 @@
 </head>
 <body>
 <main>
-    <div class="container contacts">
+    <div class="contacts container">
         <h2>Контакты</h2>
-        <div class="newUser left" style="display: none">
+        <div class="left active" id="newUserBlock">
             <form name="contactForm1" class="contactForm1" method="post">
-                <input name="FIO" id="FIO" class="text FIO" type="text" placeholder="ФИО"/>
-                <input name="email" id="email" class="text inputAfterLabel" type="email" onchange="ValidMail();" placeholder="Почта"/>
-                <input name="phoneNumber" id="phoneNumber" class="text inputAfterLabel" onchange="ValidPhone()" type="text" placeholder="Телефон"/>
-                <textarea class="textOfProblem" placeholder="Опиcание проблемы"></textarea>
-                <input type="button" class="button grayBack sendButt" name="sendButt" value="Отправить" onclick="sendForm();">
+                <input name="FIO" id="FIO" class="text FIO" type="text" placeholder="ФИО" required/>
+                <input name="email" id="email" class="text inputAfterLabel" type="email" onchange="ValidMail();" placeholder="Почта" required/>
+                <label name="labelEMail" id="labelEMail" class="labelInfo">&nbsp;</label>
+                <input name="phoneNumber" id="phoneNumber" class="text inputAfterLabel" onchange="ValidPhone()" type="text" placeholder="Телефон" required/>
+                <label name="labelPhone" id="labelPhone" class="labelInfo">&nbsp;</label>
+                <textarea class="textOfProblem" name="textOfProblem" id="textOfProblem1" placeholder="Опиcание проблемы" required></textarea>
+                <label  name="labelProblem" id="labelProblem1" class="labelInfo">&nbsp;</label>
+                <input type="submit" class="button grayBack sendButt" name="sendButt" id="sendButt1" value="Отправить">
             </form>
         </div>
-        <div class="loginUser left" style="display: none">
+        <div class="left inactive" id="loginUserBlock">
             <form name="contactForm2" class="contactForm2" method="post">
                 <p>
                     {{$UserName}}, что-то случилось?</br></br>
                     Опишите проблему, мы свяжемся с Вами по </br>
                     электронной почте в течение 1 рабочего дня!
                 </p>
-                <textarea class="textOfProblem" placeholder="Опиcание проблемы"></textarea>
-                <input type="button" class="button grayBack sendButt" name="sendButt" value="Отправить" onclick="sendForm();">
+                <textarea class="textOfProblem" name="textOfProblem" id="textOfProblem2" placeholder="Опиcание проблемы"></textarea>
+                <label  name="labelProblem" id="labelProblem2" class="labelInfo">&nbsp;</label>
+                <input type="button" class="button grayBack sendButt" name="sendButt" id="sendButt2" value="Отправить" onclick="sendProblem2();" disabled>
             </form>
         </div>
-        <div class="successContact left">
+        <div class="left inactive" id="successContactBlock">
             <h3>Обратная связь отправлена!</h3>
             <p>Ваша заявка обрабатывается администратором, мы </br>
                 обязательно с вами свяжемся по электронной почте.</p>
-            <button class="button blueBack sendMoreButt" name="sendMoreButt" onclick="sendMore();">
+            <a class="button blueBack sendMoreButt" onclick="sendMoreProblem();">
                 Отправить еще письмо
-            </button>
+            </a>
         </div>
-        <div class="contactsInfo right">
+        <div class="right" id="contactsInfoBlock">
             <h2 class="CompanyPhone">8 900 565 44 44</h2>
             <p class="CompanyMail">Pochta@mail.ru</p>
             <p class="CompanyAddress">Проспекл Луначарского, д 65 офис 3</p>

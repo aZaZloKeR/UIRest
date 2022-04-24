@@ -150,7 +150,6 @@ a.forgotPassword{
 
 .redWarning{
     border: 2px solid #E14756 !important;
-    color: #EE616F !important;
 }
 
 #mainButt{
@@ -181,9 +180,9 @@ a.forgotPassword{
     height: 80%;
 }
 
-#registrationBlock{
-    display:none;
-}
+/*#registrationBlock{*/
+/*    display:none;*/
+/*}*/
 
 .active{
     animation:AnimationAddForm 0.5s ease;
@@ -194,6 +193,7 @@ a.forgotPassword{
 .inactive{
     animation:AnimationRemoveForm 0.5s ease;
     opacity:0;
+    display:none !important;
 }
 
 @keyframes AnimationAddForm{
@@ -204,17 +204,6 @@ a.forgotPassword{
 @keyframes AnimationRemoveForm{
     0%{opacity:1;}
     100%{opacity:0;}
-}
-
-.active{
-    animation:AnimationAddForm 0.5s ease;
-    opacity:1;
-    display:block !important;
-}
-
-.inactive{
-    animation:AnimationRemoveForm 0.5s ease;
-    opacity:0;
 }
 
 /*
@@ -264,6 +253,11 @@ input::placeholder {
 .inputAfterLabel{
     margin-top: 5px;
 }
+.inputAfterLabel:invalid{
+    margin-top: 5px;
+    color: red;
+}
+
 
 .inlineInput{
     /* width: 100%; */
@@ -425,7 +419,7 @@ div.welcome{
     left:0;
 }
 
-.contactsInfo{
+#contactsInfoBlock{
     margin-left: 100px;
 }
 
@@ -456,6 +450,10 @@ div.welcome{
     font-weight:500;
 }
 
+.contactForm1 > label{
+    /*font-size: 0;*/
+}
+
 .textOfProblem{
     border: 1px solid #DEDEDE;
     height: 80px;
@@ -480,22 +478,22 @@ div.welcome{
     margin-top: 0;
 }
 
-.successContact{
+#successContactBlock{
     width: 500px;
     height: 180px;
 }
 
-.successContact > h3{
+#successContactBlock > h3{
     margin-bottom: 25px;
 }
 
-.successContact > p{
+#successContactBlock > p{
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 40px;
 }
 
-.successContact > button{
-    width: 260px;
+#successContactBlock > a{
+    width: 170px;
 }
