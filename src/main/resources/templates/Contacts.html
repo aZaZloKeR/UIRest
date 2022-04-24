@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Инициативы Дубны</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <script src="../static/js/form.js" th:src="@{/js/form.js}"></script>
+
+    <style>
+        #contactsLink{
+            color: #0D47A1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="container contacts">
+        <h2>Контакты</h2>
+        <div class="newUser left" style="display: none">
+            <form name="contactForm1" class="contactForm1" method="post">
+                <input name="FIO" id="FIO" class="text FIO" type="text" placeholder="ФИО"/>
+                <input name="email" id="email" class="text inputAfterLabel" type="email" onchange="ValidMail();" placeholder="Почта"/>
+                <input name="phoneNumber" id="phoneNumber" class="text inputAfterLabel" onchange="ValidPhone()" type="text" placeholder="Телефон"/>
+                <textarea class="textOfProblem" placeholder="Опиcание проблемы"></textarea>
+                <input type="button" class="button grayBack sendButt" name="sendButt" value="Отправить" onclick="sendForm();">
+            </form>
+        </div>
+        <div class="loginUser left" style="display: none">
+            <form name="contactForm2" class="contactForm2" method="post">
+                <p>
+                    {{$UserName}}, что-то случилось?</br></br>
+                    Опишите проблему, мы свяжемся с Вами по </br>
+                    электронной почте в течение 1 рабочего дня!
+                </p>
+                <textarea class="textOfProblem" placeholder="Опиcание проблемы"></textarea>
+                <input type="button" class="button grayBack sendButt" name="sendButt" value="Отправить" onclick="sendForm();">
+            </form>
+        </div>
+        <div class="successContact left">
+            <h3>Обратная связь отправлена!</h3>
+            <p>Ваша заявка обрабатывается администратором, мы </br>
+                обязательно с вами свяжемся по электронной почте.</p>
+            <button class="button blueBack sendMoreButt" name="sendMoreButt" onclick="sendMore();">
+                Отправить еще письмо
+            </button>
+        </div>
+        <div class="contactsInfo right">
+            <h2 class="CompanyPhone">8 900 565 44 44</h2>
+            <p class="CompanyMail">Pochta@mail.ru</p>
+            <p class="CompanyAddress">Проспекл Луначарского, д 65 офис 3</p>
+        </div>
+    </div>
+</main>
+<footer>
+</footer>
+<script src="../static/js/header.js" th:src="@{/js/header.js}"></script>
+</body>
+</html>

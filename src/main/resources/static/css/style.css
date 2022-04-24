@@ -248,9 +248,9 @@ div.chooseDiv{
     INPUTS
 */
 input{
-    color:#97a4b9;
+    /*color:#97a4b9;*/
     border: 1px solid #DEDEDE;
-    height: 60px;
+    height: 50px;
     width: 95%;
     margin-top: 20px;
     padding-left: 15px;
@@ -307,7 +307,6 @@ p.inlineDiv{
 .checkbox + label {
     user-select: none;
     cursor: pointer;
-    line-height: 1.4;
     display: inline-flex;
     align-items: flex-start;
     line-height: 32px;
@@ -322,7 +321,6 @@ p.inlineDiv{
     border: 2px solid #0d47a1;
     margin-right: 10px;
     transition: .2s;
-    margin-right: 10px;
     position: relative;
     top: 0.2em;
 }
@@ -344,13 +342,6 @@ p.inlineDiv{
     background-size: 18px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
 }
-/*#checkboxInput{*/
-/*    width: 18px;*/
-/*    height: 18px;*/
-/*    margin-top: 0px;*/
-/*    box-sizing: border-box;*/
-/*    margin-right: 18px;*/
-/*}*/
 
 #labelCheckbox
 {
@@ -379,4 +370,132 @@ div.welcome{
 
 #thanks{
     margin-top: 30px;
+}
+
+/* Rules of work */
+.container{
+    height: 100%;
+    margin: 60px 10% 60px 13%;
+}
+
+.rules{
+    width: 700px;
+}
+
+.rules > h2{
+    margin-bottom: 60px;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.rules h3{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.rule{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.rule > p{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* CONTACTS */
+
+.contacts{
+    width: 980px;
+}
+
+.contacts > h2{
+    margin-bottom: 60px;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.right{
+    float: right;
+    right: 0;
+}
+
+.left{
+    float: left;
+    left:0;
+}
+
+.contactsInfo{
+    margin-left: 100px;
+}
+
+.CompanyPhone{
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.CompanyMail{
+    margin-bottom: 5px;
+}
+
+.contactForm1, .contactForm2{
+    width: 490px;
+    height: 420px;
+}
+
+.contactForm2{
+    height: 305px;
+}
+
+.contactForm1 > input.text{
+    color:#97a4b9;
+    border: 1px solid #DEDEDE;
+    height: 50px;
+    margin-top: 15px;
+    font-weight:500;
+}
+
+.textOfProblem{
+    border: 1px solid #DEDEDE;
+    height: 80px;
+    width: 450px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    padding: 20px 15px 0px 15px;
+    resize: vertical;
+}
+.contacts > textarea::placeholder {
+    color: #97a4b9;
+}
+
+.sendButt{
+    width: 135px;
+    margin-top: 0;
+    height: 40px;
+}
+
+.FIO{
+    margin-top: 0;
+}
+
+.successContact{
+    width: 500px;
+    height: 180px;
+}
+
+.successContact > h3{
+    margin-bottom: 25px;
+}
+
+.successContact > p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 40px;
+}
+
+.successContact > button{
+    width: 260px;
 }

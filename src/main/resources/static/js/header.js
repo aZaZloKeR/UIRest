@@ -13,9 +13,9 @@ var headerText =
     '                <input type="search" placeholder="Поиск" name="search" class="search_box">\n' +
     '            </form>\n' +
     '        </li>\n' +
-    '        <li class="liHeader"><a class="nav" href="#">Предложить инициативу</a></li>\n' +
-    '        <li class="liHeader"><a class="nav" href="#">Правила работы</a></li>\n' +
-    '        <li class="liHeader"><a class="nav" href="#">Контакты</a></li>\n' +
+    '        <li class="liHeader"><a class="nav" href="#" id="proposeLink">Предложить инициативу</a></li>\n' +
+    '        <li class="liHeader"><a class="nav" href="./rulesOfWork.html" id="rulesLink">Правила работы</a></li>\n' +
+    '        <li class="liHeader"><a class="nav" href="./Contacts.html" id="contactsLink">Контакты</a></li>\n' +
     '        <li class="liHeader"><a id="navButt" href="./login.html" th:href="@{/login.html}" class="button blueBack" onclick="onLogin()">Войти</a></li>\n' +
     '    </ul>\n' +
     '</header>';
