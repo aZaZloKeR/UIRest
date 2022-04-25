@@ -143,21 +143,6 @@ a.nav, a.choose{
     color: #000;
 }
 
-.blackButton{
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 15px;
-    letter-spacing: 0.05em;
-    padding: 12px 30px 13px 30px;
-    display: block;
-    width: 50px;
-}
-
 #logo_img{
     width: 20px;
     height: 25px;
@@ -252,7 +237,6 @@ input{
     border: 0.5px solid #000;
     height: 40px;
     width: 95%;
-    margin-bottom: 20px;
     padding-left: 15px;
 }
 
@@ -462,6 +446,8 @@ h2{
 }
 ul{
     text-align: justify;
+    margin: 0;
+    padding: 0;
 }
 ul li  {
     display: inline-block;
@@ -555,257 +541,6 @@ ul li.helper {
     margin: 0px 10px;
 }
 
-/*Footer*/
-footer{
-    /* Auto layout */
-    display: block;
-    flex-direction: column;
-    align-items: flex-start;
-    /*padding: 120px 360px 60px;*/
-
-    /* black */
-    background: #292935;
-
-    color: white;
-}
-@media (min-width: 1920px) {
-    footer{
-        padding: 120px 360px 60px;
-    }
-} 
-@media (min-width:1600px) and (max-width: 1919px) {
-    footer{
-        padding: 120px 18.75% 60px;
-    }
-}
-@media (max-width: 1599px) {
-    footer{
-        padding: 120px 1% 60px;
-    }
-}
-
-footer .left{
-    display: block;
-    float: left;
-    width: 45%;
-    left: 0;
-    margin-right: 5%;
-}
-footer .right{
-    display: block;
-    float: right;
-    width: 45%;
-    right: 0;
-}
-
-footer .topic{
-    /* У Вас что-то случилось? */
-
-    position: relative;
-    margin-bottom: 20px;
-
-    /* Заголовок 3 */
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 40px;
-    /* identical to box height, or 133% */
-}
-footer .text{
-    /* Сообщите нам о продлеме, и мы ответим Вам в течение 1 рабочего дня на электронную почту. */
-    position: relative;
-    margin-bottom: 40px;
-
-    /* body/16 */
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-    /* or 138% */
-}
-footer textarea{
-    resize: none;
-    display: block;
-    margin-bottom: 30px;
-    width: 100%;
-    min-height: 120px;
-}
-
-footer h2{
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-
-    /* H2 */
-    font-style: normal;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 60px;
-
-    color: white;
-} /*Phone*/
-footer .mail{
-    /* Pochta@mail.ru */
-    position: relative;
-    margin-bottom: 10px;
 
 
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height, or 125% */
-}
-footer .address{
-    /* Проспекл Луначарского, д 65 офис 3 */
 
-    position: relative;
-
-
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height, or 125% */
-}
-
-footer .underground{
-    display: block;
-    border-top: #848484 1px solid;
-    clear: both;
-    width: 100%;
-}
-footer .privacyPolicy{
-    /* Политика конфиденциальности */
-    display: block;
-    margin: 40px 0 20px;
-
-    /* body/16 */
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-    /* identical to box height, or 138% */
-}
-footer .createdBy{
-    /* (с) created by hopper-it */
-    position: relative;
-
-
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height, or 125% */
-
-    opacity: 0.5;
-}
-
-/*placeholder*/
-.placeholder {
-    padding: 19px 15px;
-    border: 1px solid #DEDEDE;
-    box-sizing: border-box;
-
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-    /* identical to box height, or 138% */
-
-    background: white;
-    color: #292935;
-
-    /* delete if it doesn't fit all cases */
-    width: 100%;
-}
-.placeholder:hover {
-    border: 2px solid #0D47A1; /*origin 1.5px*/
-}
-.placeholder:focus {
-    border: 1px solid #0D47A1;
-}
-.placeholder:invalid {
-    border-color: #E0473E;
-}
-footer .placeholder{
-    background: #292935;
-    color: white;
-}
-
-/*buttons*/
-.primaryButton{
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-
-    padding: 15px 30px;
-
-    /* blue */
-    background: #0D47A1;
-    border-radius: 2px;
-
-    /* button */
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 15px; /* identical to box height, or 107% */
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-
-    /* white */
-    color: #FFFFFF;
-}
-.primaryButton:hover{
-    background: #306DCC
-}
-.primaryButton:disabled{
-    background: #97A4B9;
-}
-
-.secondaryButton{
-    /* button */
-
-    /* Auto layout */
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*align-items: flex-start;*/
-    padding: 15px 30px;
-
-    background: #E6EFFF;
-    border: 1px solid #C7DDFF;
-    box-sizing: border-box;
-    border-radius: 2px;
-
-    /* button */
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 15px; /* identical to box height, or 107% */
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-
-    /* blue */
-    color: #0D47A1;
-}
-.secondaryButton:hover{
-    background: #0D47A1;
-    color: white;
-    border: none;
-}
-.secondaryButton:disabled{
-    background: #DBDBDB;
-    color: #97A4B9;
-    border: #DBDBDB 1px solid;
-}

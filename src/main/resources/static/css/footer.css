@@ -1,0 +1,152 @@
+/*Footer*/
+footer{
+    /* Auto layout */
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;
+    /*padding: 120px 360px 60px;*/
+
+    /* black */
+    background: #292935;
+
+    color: white;
+}
+@media (min-width: 1920px) {
+    footer{
+        padding: 120px 360px 60px;
+    }
+}
+@media (min-width:1600px) and (max-width: 1919px) {
+    footer{
+        padding: 120px 18.75% 60px;
+    }
+}
+@media (max-width: 1599px) {
+    footer{
+        padding: 120px 1% 60px;
+    }
+}
+
+footer .left{
+    display: block;
+    float: left;
+    width: 45%;
+    left: 0;
+    margin-right: 5%;
+}
+footer .right{
+    display: block;
+    float: right;
+    width: 45%;
+    right: 0;
+}
+
+footer .topic{
+    /* У Вас что-то случилось? */
+
+    position: relative;
+    margin-bottom: 20px;
+
+    /* Заголовок 3 */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    /* identical to box height, or 133% */
+}
+footer .text{
+    /* Сообщите нам о продлеме, и мы ответим Вам в течение 1 рабочего дня на электронную почту. */
+    position: relative;
+    margin-bottom: 40px;
+
+    /* body/16 */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    /* or 138% */
+}
+footer textarea{
+    resize: none;
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+    min-height: 120px;
+}
+
+footer h2{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+
+    /* H2 */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+
+    color: white;
+} /*Phone*/
+footer .mail{
+    /* Pochta@mail.ru */
+    position: relative;
+    margin-bottom: 10px;
+
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+}
+footer .address{
+    /* Проспекл Луначарского, д 65 офис 3 */
+
+    position: relative;
+
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+}
+
+footer .underground{
+    display: block;
+    border-top: #848484 1px solid;
+    clear: both;
+    width: 100%;
+}
+footer .privacyPolicy{
+    /* Политика конфиденциальности */
+    display: block;
+    margin: 40px 0 20px;
+
+    /* body/16 */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 138% */
+}
+footer .createdBy{
+    /* (с) created by hopper-it */
+    position: relative;
+
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+    opacity: 0.5;
+}
