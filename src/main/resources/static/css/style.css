@@ -37,7 +37,7 @@ li{
     line-height: 15px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    height: 90px;
+    min-height: 90px;
 }
 
 .nav{
@@ -98,15 +98,30 @@ a.nav, a.choose{
     text-transform: uppercase;
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 15px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     padding: 13px 30px 12px 30px;
     display: block;
     width: 110px;
     border-radius:3px;
     border: none;
     cursor: pointer;
+}
+
+.black
+{
+    color: #000;
+}
+
+.blue
+{
+    color: #0d47a1;
+}
+
+.gray
+{
+    color: #97a4b9;
 }
 
 .blackBack{
@@ -137,6 +152,7 @@ a.nav, a.choose{
 div.forgotPassword{
     float: right;
     margin-top: 40px;
+    box-sizing: border-box;
 }
 
 a.forgotPassword{
@@ -145,7 +161,8 @@ a.forgotPassword{
 }
 
 #registButt{
-    width: 225px;
+    width: 230px;
+    margin-bottom: 20px;
 }
 
 .redWarning{
@@ -172,12 +189,12 @@ a.forgotPassword{
     padding-left: 7%;
     padding-top: 5%;
     padding-bottom: 5%;
+    overflow: hidden;
 }
 
 #registrationBlock, #loginBlock{
     display: inline-block;
     width: 80%;
-    height: 80%;
 }
 
 /*#registrationBlock{*/
@@ -243,7 +260,9 @@ input{
     width: 95%;
     margin-top: 20px;
     padding-left: 15px;
+    margin-right: 30%;
     font-weight:500;
+    box-sizing: border-box;
 }
 
 input::placeholder {
@@ -258,20 +277,28 @@ input::placeholder {
     color: red;
 }
 
-
-.inlineInput{
-    /* width: 100%; */
-    display: flex;
-    /* flex-wrap: nowrap; */
-    /* box-sizing: border-box; */
+.labelInfo
+{
+    color:red;
+    min-width:50px;
 }
 
-.initials{
-    /* display: flex; */
-    flex: 0 0 28.2%;
+.inlineInput {
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+
+.initials {
+    display: flex;
+    flex: 0 0 32.66%;
     position: relative;
     margin-right: 1%;
-    overflow: hidden;
+}
+
+#thirdName {
+    margin-right: 0px;
 }
 
 p.inlineDiv{

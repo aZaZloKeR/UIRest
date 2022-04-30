@@ -11,8 +11,12 @@
 <main>
     <div class="wrapper">
         <div class="chooseDiv">
-            <div id="loginFormDiv" class="chooseRef borderBottom" onclick="AddBorderToLoginForm();"> <a class="choose" id="logFormLink" onclick="onLogin()">Вход</a></div>
-            <div id="regFormDiv" class="chooseRef" onclick="AddBorderToRegistrationForm();"> <a id="regFormLink" onclick="onRegistration()">Регистрация</a></div>
+            <div id="loginFormDiv" class="chooseRef borderBottom" onclick="AddBorderToLoginForm();">
+                <a class="choose" id="logFormLink" onclick="onLogin()">Вход</a>
+            </div>
+            <div id="regFormDiv" class="chooseRef" onclick="AddBorderToRegistrationForm();">
+                <a id="regFormLink" onclick="onRegistration()">Регистрация</a>
+            </div>
         </div>
         <div id="loginBlock" class="active">
             <form name="loginForm" id="loginForm" class="loginForm" method="post">
@@ -36,11 +40,12 @@
                 <input name="phoneNumber" id="phoneNumber" class="inputAfterLabel" onchange="ValidPhone()" type="text" placeholder="Телефон"/>
                 <label name="labelPhone" id="labelPhone" class="labelInfo">&nbsp;</label>
                 <input name="address" id="address" class="inputAfterLabel" type="text" placeholder="Адрес проживания"/>
-                <label name="labelAdress" id="labelAdress" class="labelInfo">&nbsp;</label>
+                <label name="labelAddress" id="labelAddress" class="labelInfo">&nbsp;</label>
                 <input name="email" id="email" class="inputAfterLabel" type="email" onchange="ValidMail();" placeholder="Почта"/>
                 <label name="labelEMail" id="labelEMail" class="labelInfo">&nbsp;</label>
                 <input name="password1" type="password" id="password1" class="inputAfterLabel" onchange="ValidPassword();" placeholder="Пароль"/>
-                <input name="password2" type="password" id="password2" onchange="comparePasswords();" placeholder="Повторите пароль"/>
+                <label name="labelPassword2" id="labelPassword1" class="labelInfo">&nbsp;</label>
+                <input name="password2" type="password" id="password2" class="inputAfterLabel" onchange="comparePasswords();" placeholder="Повторите пароль"/>
                 <label name="labelPassword2" id="labelPassword2" class="labelInfo">&nbsp;</label>
                 <input id="checkboxInput" type="checkbox" class="checkbox" />
                 <label for="checkboxInput" id="labelCheckbox">Согласен с <a href="#">политикой конфиденциальности</a></label>

@@ -38,22 +38,24 @@ function addClass(testInput, className){
 	else{ testInput.classList.remove(className);}
 }
 
-function AddBorderToLoginForm(){
-	let loginBlock = document.getElementById('loginFormDiv');
-	let registrationBlock = document.getElementById('regFormDiv');
-	let logLink = document.getElementById('logFormLink');
-	let regLink = document.getElementById('regFormLink');
-	changeClass(loginBlock, registrationBlock, 'borderBottom', true);
-	changeClass(logLink, regLink, 'choose', true);
-}
-
-function AddBorderToRegistrationForm(){
+function AddBorderToLoginForm()
+{
 	var loginBlock = document.getElementById('loginFormDiv');
 	var registrationBlock = document.getElementById('regFormDiv');
-	let logLink = document.getElementById('logFormLink');
-	let regLink = document.getElementById('regFormLink');
-	changeClass(loginBlock, registrationBlock, 'borderBottom', false);
-	changeClass(logLink, regLink, 'choose', false);
+	registrationBlock.classList.remove('borderBottom');
+	regFormLink.classList.remove('choose');
+	loginFormDiv.classList.add('borderBottom');
+	logFormLink.classList.add('choose');
+}
+
+function AddBorderToRegistrationForm()
+{
+	var loginBlock = document.getElementById('loginFormDiv');
+	var registrationBlock = document.getElementById('regFormDiv');
+	loginBlock.classList.remove('borderBottom');
+	registrationBlock.classList.add('borderBottom');
+	regFormLink.classList.add('choose');
+	logFormLink.classList.remove('choose');
 }
 
 function ValidMail(){
@@ -63,10 +65,12 @@ function ValidMail(){
 	var valid = re.test(eMail.value);
 	if (!valid){
 		labelEMail.textContent = 'Введите корректный eMail';
+		email.classList.add('redWarning');
 		return false;
 	}
 	else{
 		labelEMail.innerHTML = '&nbsp;';
+		email.classList.remove('redWarning');
 		return true;
 	}
 }
@@ -78,10 +82,12 @@ function ValidPhone(){
 	var valid = re.test(phone.value);
 	if (!valid){
 		labelPhone.innerHTML = 'Введите корректный номер телефона';
+		phone.classList.add('redWarning');
 		return false;
 	}
 	else{
 		labelPhone.innerHTML = '&nbsp;';
+		phone.classList.remove('redWarning');
 		return true;
 	}
 }
@@ -93,11 +99,13 @@ function ValidBirthDate()
 	var re = /^((0[1-9]|[12]\d)\.(0[1-9]|1[012])|(30\.0[13-9]|1[012]|31\.(0[13578]|1[02])))\.(19|20)\d\d$/;
 	var valid = re.test(birthDate.value);
 	if (!valid){
-		labelBirthDate.innerHTML = 'Пароль может включать в себя только латинские буквы и цифры. Так же должен содержать минимум 1 цифру, 1 строчную и 1 заглавную буквы.';
+		labelBirthDate.innerHTML = 'Введите корректную дату рождения.';
+		birthDate.classList.add('redWarning');
 		return false;
 	}
 	else{
 		labelBirthDate.innerHTML = '&nbsp;';
+		birthDate.classList.remove('redWarning');
 		return true;
 	}
 }
@@ -109,11 +117,13 @@ function ValidPassword()
 	var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 	var valid = re.test(password1.value);
 	if (!valid){
-		labelPassword1.innerHTML = 'Введите корректную дату рождения';
+		labelPassword1.innerHTML = 'Пароль может включать в себя только латинские буквы и цифры. Так же должен содержать минимум 1 цифру, 1 строчную и 1 заглавную буквы.';
+		password1.classList.add('redWarning');
 		return false;
 	}
 	else{
 		labelPassword1.innerHTML = '&nbsp;';
+		password1.classList.remove('redWarning');
 		return true;
 	}
 }
@@ -149,17 +159,21 @@ async function login(){
 
 function comparePasswords()
 {
-	let password1 = document.forms.registForm.password1.value;
-	let password2 = document.forms.registForm.password2.value;
+	let password1 = document.forms.registForm.password1;
+	let password2 = document.forms.registForm.password2;
 	let labelPassword2 = document.getElementById('labelPassword2');
-	if (password1 != password2)
+	if (password1.value != password2.value)
 	{
 		labelPassword2.innerHTML = 'Пароли не совпадают';
+		password1.classList.add('redWarning');
+		password2.classList.add('redWarning');
 		return false;
 	}
 	else
 	{
 		labelPassword2.innerHTML = '&nbsp;';
+		password1.classList.remove('redWarning');
+		password2.classList.remove('redWarning');
 		return true;
 	}
 }
@@ -170,29 +184,10 @@ async function registration(){
 	let thirdName = document.getElementById("thirdName");
 	let birthDate = document.getElementById("birthDate");
 	let password1 = document.getElementById("password1");
-	let password2 = document.getElementById("password2");
 	let phoneNumber = document.getElementById("phoneNumber");
 	let address = document.getElementById("address");
 	let email = document.getElementById("email");
-	var regInputArr = [
-		lastName,
-		firstName,
-		thirdName,
-		birthDate,
-		password1,
-		password2,
-		phoneNumber,
-		address,
-		email
-	];
-	for (let i = 0; i < regInputArr.length; i++){
-		addClass(regInputArr[i], 'redWarning');
-	}
 
-	if (comparePasswords() == false)
-	{
-		return;
-	}
 
 	const url ='/balancer/registration';
 	try {
