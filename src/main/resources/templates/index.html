@@ -3,35 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <title>Инициативы Дубны</title>
-    <link href="./STYLE/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
-    <script src="./JS/form.js"></script>
+    <script src="../static/js/form.js" th:src="@{/js/form.js}"></script>
 </head>
 <body>
-<header id="header">
-    <ul class="nav">
-        <li class="liHeader">
-            <div id="logo_info">
-                <img id="logo_img" src="./IMG/Шапка/Vect.png" />
-                <img id="logo_line" src="./IMG/Шапка/Line%201.png" />
-                <p id="sait_name"><strong>Инициативы<br/>жителей Дубны</strong></p>
-            </div>
-        </li>
-        <li class="liHeader">
-            <form id="search_form" action="#">
-                <input type="search" placeholder="Поиск" name="search" class="search_box">
-            </form>
-        </li>
-        <li class="liHeader"><a class="nav" href="#">Предложить инициативу</a></li>
-        <li class="liHeader"><a class="nav" href="#">Правила работы</a></li>
-        <li class="liHeader"><a class="nav" href="#">Обратная связь</a></li>
-        <li class="liHeader"><a href="login.html" class="blackButton" onclick="onLogin()">Войти</a></li>
-    </ul>
-</header>
 <main>
 </main>
 <footer>
 </footer>
+<script src="../static/js/header.js" th:src="@{/js/header.js}"></script>
 </body>
 </html>
