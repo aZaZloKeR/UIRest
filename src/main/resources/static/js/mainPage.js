@@ -28,8 +28,21 @@ function FillInitiatives() {
 
 function OnLoad()
 {
+    var pageNumber = document.getElementById('pageNumber');
     var choosePageLeft = document.getElementById('choosePageLeft');
-    choosePageLeft.disabled = true;
+    var choosePageRight = document.getElementById('choosePageRight');
+    if (pageNumber.value == 1)
+    {
+        choosePageLeft.classList.add('disabledButton');
+        choosePageLeft.classList.remove('enabledButton');
+        choosePageLeft.disabled = true;
+    }
+    if (pageNumber.value == pageNumber.max)
+    {
+        choosePageRight.classList.add('disabledButton');
+        choosePageRight.classList.remove('enabledButton');
+        choosePageRight.disabled = true;
+    }
 }
 
 function ChoosePage(direction)
@@ -43,6 +56,8 @@ function ChoosePage(direction)
         {
             pageNumber.value = 1;
             choosePageLeft.disabled = true;
+            choosePageLeft.classList.add('disabledButton');
+            choosePageLeft.classList.remove('enabledButton');
         }
         else if (pageNumber.value > 2)
         {
@@ -52,6 +67,8 @@ function ChoosePage(direction)
         {
             pageNumber.value--;
             choosePageRight.disabled = false;
+            choosePageRight.classList.remove('disabledButton');
+            choosePageRight.classList.add('enabledButton');
         }
     }
 
@@ -61,6 +78,8 @@ function ChoosePage(direction)
         {
             pageNumber.value == pageNumber.max;
             choosePageRight.disabled = true;
+            choosePageRight.classList.add('disabledButton');
+            choosePageRight.classList.remove('enabledButton');
         }
         else if (pageNumber.value < pageNumber.max - 1)
         {
@@ -70,6 +89,8 @@ function ChoosePage(direction)
         {
             pageNumber.value++;
             choosePageLeft.disabled = false;
+            choosePageLeft.classList.remove('disabledButton');
+            choosePageLeft.classList.add('enabledButton');
         }
     }
 }
