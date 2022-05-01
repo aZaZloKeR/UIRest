@@ -258,8 +258,6 @@ async function registration(){
 		return;
 	}
 
-
-
 	const url ='/balancer/registration';
 	try {
 		const response = await fetch(url, {

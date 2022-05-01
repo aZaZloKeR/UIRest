@@ -26,6 +26,54 @@ function FillInitiatives() {
     }
 }
 
+function OnLoad()
+{
+    var choosePageLeft = document.getElementById('choosePageLeft');
+    choosePageLeft.disabled = true;
+}
+
+function ChoosePage(direction)
+{
+    var pageNumber = document.getElementById('pageNumber');
+    var choosePageLeft = document.getElementById('choosePageLeft');
+    var choosePageRight = document.getElementById('choosePageRight');
+    if (direction == 'left')
+    {
+        if (pageNumber.value == 2)
+        {
+            pageNumber.value = 1;
+            choosePageLeft.disabled = true;
+        }
+        else if (pageNumber.value > 2)
+        {
+            pageNumber.value-- ;
+        }
+        else if (pageNumber.value == pageNumber.max)
+        {
+            pageNumber.value--;
+            choosePageRight.disabled = false;
+        }
+    }
+
+    if (direction == 'right')
+    {
+        if (pageNumber.value == pageNumber.max - 1)
+        {
+            pageNumber.value == pageNumber.max;
+            choosePageRight.disabled = true;
+        }
+        else if (pageNumber.value < pageNumber.max - 1)
+        {
+            pageNumber.value++;
+        }
+        else if (pageNumber.value == 1)
+        {
+            pageNumber.value++;
+            choosePageLeft.disabled = false;
+        }
+    }
+}
+
 function AddInitiative(tdElem, initiative) {
     let link = document.createElement("a");
     link.href = "./initiative/" + initiative.id;
