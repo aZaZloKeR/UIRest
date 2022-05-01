@@ -1,5 +1,5 @@
 let initiatives = [];
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 12; i++) {
     initiatives.push({
         id: i + 1,
         name: "it's a " + (i + 1) + " initiative",
@@ -19,7 +19,7 @@ function FillInitiatives() {
     for (let i = 0, row; row = table.rows[i]; i++) {
         for (let j = 0, col; col = row.cells[j]; j++) {
             console.log(col);
-            if (counter >= 6) return;
+            if (counter >= 12) return;
             AddInitiative(col, initiatives[counter]);
             counter++;
         }
