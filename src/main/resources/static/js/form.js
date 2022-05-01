@@ -170,6 +170,20 @@ async function login(){
 	} catch (error) {
 		console.error('Ошибка:', error);
 	}
+
+	var labelLogin = document.getElementById('labelLogin');
+	if (true){
+		labelLogin.innerHTML = 'Неверный логин или пароль.';
+		mail.classList.add('redWarning');
+		password.classList.add('redWarning');
+		return;
+	}
+	else{
+		labelLogin.innerHTML = '&nbsp;';
+		mail.classList.remove('redWarning');
+		password.classList.remove('redWarning');
+		return;
+	}
 }
 
 function comparePasswords()
