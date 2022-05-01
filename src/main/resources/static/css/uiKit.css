@@ -1,0 +1,101 @@
+/*placeholder*/
+.placeholder {
+    padding: 19px 15px;
+    border: 1px solid #DEDEDE;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 138% */
+
+    background: white;
+    color: #292935;
+
+    /* delete if it doesn't fit all cases */
+    width: 100%;
+}
+.placeholder:hover {
+    border: 2px solid #0D47A1; /*origin 1.5px*/
+}
+.placeholder:focus {
+    border: 1px solid #0D47A1;
+}
+.placeholder:invalid {
+    border-color: #E0473E;
+}
+footer .placeholder{
+    background: #292935;
+    color: white;
+}
+
+/*buttons*/
+.primaryButton{
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    padding: 15px 30px;
+
+    /* blue */
+    background: #0D47A1;
+    border-radius: 2px;
+
+    /* button */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px; /* identical to box height, or 107% */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    /* white */
+    color: #FFFFFF;
+}
+.primaryButton:hover{
+    background: #306DCC
+}
+.primaryButton:disabled{
+    background: #97A4B9;
+}
+
+.secondaryButton{
+    /* button */
+
+    /* Auto layout */
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*align-items: flex-start;*/
+    padding: 15px 30px;
+
+    background: #E6EFFF;
+    border: 1px solid #C7DDFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    /* button */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px; /* identical to box height, or 107% */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    /* blue */
+    color: #0D47A1;
+}
+.secondaryButton:hover{
+    background: #0D47A1;
+    color: white;
+    border: none;
+}
+.secondaryButton:disabled{
+    background: #DBDBDB;
+    color: #97A4B9;
+    border: #DBDBDB 1px solid;
+}

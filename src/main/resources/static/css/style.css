@@ -8,6 +8,11 @@ html, body{
     background: #e5e5e5;
 }
 
+main
+{
+    min-height: 100%;
+}
+
 p{
     font-size: 14px;
 }
@@ -180,6 +185,7 @@ a.forgotPassword{
 */
 .wrapper{
     background-color: #fff;
+    min-height: 100%;
     width: 35%;
     position: relative;
     float: left;
