@@ -575,7 +575,52 @@ ul li.helper {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+.inputFile
+{
+    opacity:0;
+}
 
+.leftInitiative
+{
+    width: 45%;
+}
+
+.inputInitiative
+{
+    width:70%;
+    margin-left:15%;
+}
+
+#nameInitiative{
+    height:50px;
+}
+
+.inputInitiative textarea
+{
+    min-height: 150px;
+    resize:none;
+}
+
+.inputInitiative input, textarea, inputFile
+{
+    font-size:18px;
+    width:100%;
+    border: 1px solid #DEDEDE;
+    margin-top: 20px;
+    padding-left: 15px;
+    margin-right: 30%;
+    font-weight:500;
+    box-sizing: border-box;
+}
+
+border: 1px solid #DEDEDE;
+height: 50px;
+width: 95%;
+margin-top: 20px;
+padding-left: 15px;
+margin-right: 30%;
+font-weight:500;
+box-sizing: border-box;
 
 .allInitiatives span{
     /* body/16 */
