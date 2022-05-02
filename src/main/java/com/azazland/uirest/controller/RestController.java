@@ -1,6 +1,7 @@
 package com.azazland.uirest.controller;
 
 
+import com.azazland.uirest.json.unpacker.Initiative;
 import com.azazland.uirest.json.unpacker.LoginUnpackerJson;
 import com.azazland.uirest.json.unpacker.RegistrationUnpackerJson;
 import org.springframework.stereotype.Controller;
@@ -83,5 +84,64 @@ public class RestController {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @GetMapping(value = "/balancer/deeds/{deedId}")
+    public HttpResponse<String> getInitiative(@PathVariable String deedId){
+        try {
+            HttpClient httpClient = HttpClient.newHttpClient();
+            HttpRequest httpRequest = HttpRequest.newBuilder()
+                    .uri(new URI("https://deeds/{"+ deedId +"}"))
+                    .GET()
+                    .build();
+            return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    @GetMapping(value = "/balancer/deeds/user/{userId}")
+    public HttpResponse<String> getAllInitiativeByUserId(@PathVariable int userId){
+        try {
+            HttpClient httpClient = HttpClient.newHttpClient();
+            HttpRequest httpRequest = HttpRequest.newBuilder()
+                    .uri(new URI("https://deeds/user/{"+ userId +"}"))
+                    .GET()
+                    .build();
+            return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    @GetMapping(value = "/balancer/deeds")
+    public HttpResponse<String> getAllInitiative(){
+        try {
+            HttpClient httpClient = HttpClient.newHttpClient();
+            HttpRequest httpRequest = HttpRequest.newBuilder()
+                    .uri(new URI("https://deeds"))
+                    .GET()
+                    .build();
+            return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    @PostMapping(value = "/balancer/deeds")
+    public void addNewInitiative(@RequestBody Initiative initiative){
+        try {
+            if (initiative == null){
+                throw new Exception("httpEntity is null -> This is custom exception");
+            }
+            HttpClient httpClient = HttpClient.newHttpClient();
+            HttpRequest httpRequest = HttpRequest.newBuilder()
+                    .uri(new URI("https://deeds"))
+                    .POST(HttpRequest.BodyPublishers.ofString(initiative.toString()))
+                    .build();
+            httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
