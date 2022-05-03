@@ -4,6 +4,7 @@ package com.azazland.uirest.controller;
 import com.azazland.uirest.json.unpacker.Initiative;
 import com.azazland.uirest.json.unpacker.LoginUnpackerJson;
 import com.azazland.uirest.json.unpacker.RegistrationUnpackerJson;
+import com.netflix.discovery.EurekaClientNames;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class RestController {
             }
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://auth/users/post"))
+                    .uri(new URI("http://79.120.10.217:1500/auth/users/post"))
                     .POST(HttpRequest.BodyPublishers.ofString(registrationUnpackerJson.toString()))
                     .build();
             httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -41,7 +42,7 @@ public class RestController {
             }
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://auth/login/post"))
+                    .uri(new URI("http://79.120.10.217:1500/auth/login"))
                     .POST(HttpRequest.BodyPublishers.ofString(loginUnpackerJson.toString()))
                     .build();
             httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -61,7 +62,7 @@ public class RestController {
         try {
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://auth/users/{"+ userId +"}/put"))
+                    .uri(new URI("http://79.120.10.217:1500/auth/users/{"+ userId +"}/put"))
                     .PUT(HttpRequest.BodyPublishers.ofString(registrationUnpackerJson.toString()))
                     .build();
             HttpServletResponse httpResponse = (HttpServletResponse)httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -71,15 +72,18 @@ public class RestController {
         }
         return "index";
     }
+    // test
     @GetMapping(value = "/balancer/users/{userId}")
-    public HttpResponse<String> giveInfoAboutUser(@PathVariable int userId){
+    public @ResponseBody HttpResponse<String> giveInfoAboutUser(@PathVariable int userId){
         try {
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://auth/users/{"+ userId +"}/get"))
+                    .uri(new URI("http://79.120.10.217:1500/auth/users/"+ userId))
                     .GET()
                     .build();
-            return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> dad = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            System.err.println( dad.body().toString());
+            return dad;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,7 +95,7 @@ public class RestController {
         try {
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://deeds/{"+ deedId +"}"))
+                    .uri(new URI("http://79.120.10.217:1500/deeds/{"+ deedId +"}"))
                     .GET()
                     .build();
             return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -105,7 +109,7 @@ public class RestController {
         try {
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://deeds/user/{"+ userId +"}"))
+                    .uri(new URI("http://79.120.10.217:1500/deeds/user/{"+ userId +"}"))
                     .GET()
                     .build();
             return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -119,7 +123,7 @@ public class RestController {
         try {
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://deeds"))
+                    .uri(new URI("http://79.120.10.217:1500/deeds"))
                     .GET()
                     .build();
             return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -136,7 +140,7 @@ public class RestController {
             }
             HttpClient httpClient = HttpClient.newHttpClient();
             HttpRequest httpRequest = HttpRequest.newBuilder()
-                    .uri(new URI("https://deeds"))
+                    .uri(new URI("http://79.120.10.217:1500/deeds"))
                     .POST(HttpRequest.BodyPublishers.ofString(initiative.toString()))
                     .build();
             httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
