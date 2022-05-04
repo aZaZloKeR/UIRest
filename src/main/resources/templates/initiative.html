@@ -7,21 +7,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="../static/css/uiKit.css" th:href="@{/css/uiKit.css}" rel="stylesheet" type="text/css"/>
     <link href="../static/css/footer.css" th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
-    <script src="../static/js/form.js" th:src="@{/js/form.js}"></script>
+    <script src="../static/js/initiative.js" th:src="@{/js/form.js}"></script>
 </head>
 <body>
 <main>
-    <a href="./initiatives.html">< К инициативам</a>
-    <h1>Новая инициатива</h1>
+    <a id="goBack" href="./initiatives.html">< к инициативам</a>
+    <h1 id="newInitiativeH1">Новая инициатива</h1>
     <div class="initiative">
         <div class="leftInitiative">
             <form class="formInitiative">
-                <input type="text" name="nameInitiative" id="nameInitiative" placeholder="Название">
-                <textarea placeholder="Описание"></textarea>
+                <input onchange="CheckIsFilled()" type="text" name="nameInitiative" id="nameInitiative" placeholder="Название">
+                <textarea onchange="CheckIsFilled()" placeholder="Описание" id="textArea"></textarea>
                 <div class="forInputFile">
                     <div class="inputFileInterface">
-                        <span><img src="..static/img/upload.png"</span>
-                        <input class="inputFile" type="file">
+                        <div class="inputFileText">
+                            <span id="inputFileTextLine1">
+                                <img src="../static/img/upload.png" th:src="@{/img/upload.png}"/>
+                                ЗАГРУЗИТЕ ИЗОБРАЖЕНИЯ
+                            </span>
+                            <br />
+                            <span id="inputFileTextLine2">
+                                Или перетяните в это поле
+                            </span>
+                        </div>
+                        <input onchange="CheckIsFilled()" class="inputFile" id="inputImage" type="file">
                     </div>
                 </div>
             </form>
@@ -31,10 +40,22 @@
                 Памятка
             </h1>
             <p>
-
+                Предложите что-то интересное и люди Вас поддержат. Введите заголовок с продающим текстом, тогда все будет круто и все проголосуют за Вашу инициативу.
+            </p>
+            <p>
+                Убедитесь в том, что похожей инициативы нет в базе, заполните все поля формы и нажмите "Отправить".
+            </p>
+            <p>
+                После отправки инициатива попадет на модерацию, мы обязательно рассмотрим вашу идею.
+            </p>
+            <p>
+                Улучшим город вместе!
             </p>
         </div>
     </div>
+    <button onclick="SendInitiative()" id="submitForm">
+        ОТПРАВИТЬ
+    </button>
 </main>
 <footer>
     <div class="left">

@@ -143,6 +143,11 @@ a.nav, a.choose{
     background-color: #0d47a1;
 }
 
+.blueBack2
+{
+    background-color: #809dca;
+}
+
 .grayBack{
     background-color: #97a4b9;
 }
@@ -392,18 +397,34 @@ main
 {
     display:flex;
     flex-wrap: nowrap;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .leftInitiative
 {
     flex: 0 0 45%;
     margin-right: 5%;
+    box-sizing: border-box;
 }
 
 .rightInitiative
 {
     flex: 0 0 50%;
+    background: #ffffff;
+    padding:30px;
+    box-sizing: border-box;
+}
+
+.rightInitiative p
+{
+    margin-top:20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.rightInitiative h1
+{
+    font-size:20px;
 }
 
 .inputInitiative
@@ -414,6 +435,7 @@ main
 
 #nameInitiative{
     height:50px;
+    margin-top:0px;
 }
 
 .formInitiative textarea
@@ -441,11 +463,13 @@ main
 
 .inputFileInterface
 {
+    position:relative;
     width: 100%;
     height:150px;
     border: 1px dashed #0d47a1;
     box-sizing: border-box;
     background: #ebedf1;
+    margin-top:20px
 }
 
 .inputFile
@@ -455,5 +479,66 @@ main
     padding: 0px !important;
     width:100% !important;
     height:100% !important;
+}
+
+.inputFileInterface img
+{
+    width:20px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+}
+
+#inputFileTextLine1
+{
+    color:#0d47a1;
+    font-weight: 600;
+}
+
+#inputFileTextLine2
+{
+    color:#97a4b9;
+    font-weight: 600;
+
+}
+
+.inputFileText
+{
+    text-align:center;
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+main
+{
+    margin-top: 35px;
+}
+
+#newInitiativeH1
+{
+    margin-top:35px;
+    margin-bottom: 20px;
+    font-size:40px;
+    letter-spacing: 2px;
+}
+
+#goBack
+{
+    color:#97a4b9;
+    letter-spacing: 2px;
+}
+
+#submitForm
+{
+    width: 150px;
+    height: 40px;
+    color:white;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border:none;
+    background: #809dca;
 }
 
