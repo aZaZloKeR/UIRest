@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Инициативы Дубны</title>
-    <link href="../static/css/styleInitiatives.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/styleInitiative.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="../static/css/uiKit.css" th:href="@{/css/uiKit.css}" rel="stylesheet" type="text/css"/>
     <link href="../static/css/footer.css" th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
@@ -12,22 +12,29 @@
 <body>
 <main>
     <a href="./initiatives.html">< К инициативам</a>
-    <form class="inputInitiative">
+    <h1>Новая инициатива</h1>
+    <div class="initiative">
         <div class="leftInitiative">
-            <h1>Новая инициатива</h1>
-            <input type="text" name="nameInitiative" id="nameInitiative" placeholder="Название">
-            <textarea ></textarea>
-            <div class="forInputFile">
-                <div class="inputFileInterface">
-
+            <form class="formInitiative">
+                <input type="text" name="nameInitiative" id="nameInitiative" placeholder="Название">
+                <textarea placeholder="Описание"></textarea>
+                <div class="forInputFile">
+                    <div class="inputFileInterface">
+                        <span><img src="..static/img/upload.png"</span>
+                        <input class="inputFile" type="file">
+                    </div>
                 </div>
-                <input class="inputFile" type="file">
-            </div>
+            </form>
         </div>
         <div class="rightInitiative">
+            <h1>
+                Памятка
+            </h1>
+            <p>
 
+            </p>
         </div>
-    </form>
+    </div>
 </main>
 <footer>
     <div class="left">
