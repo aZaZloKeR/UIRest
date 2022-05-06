@@ -89,6 +89,79 @@ a.nav, a.choose{
     color: #000;
 }
 
+
+.dropDown .navDropButton {
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000;
+    padding: 14px 16px;
+    background-color: inherit;
+
+}
+
+.navLink{
+    display: inline-block;
+}
+
+@media screen and (min-width:1151px) {
+    #header {
+        height: auto;
+    }
+    .dropDown{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #header {
+        height: auto;
+    }
+    .dropDown{
+        display: inline-block;
+    }
+    .navLink{
+        display: none
+    }
+
+    .dropDown:hover .navDropButton {
+        background-color: #0d47a1;
+        color: #fff;
+    }
+
+    a .hiddenContent{
+        display: inline-block;
+    }
+
+    .hiddenContent{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+        z-index: 1;
+        width: calc(100% - 250px);
+        height: 25px;
+        left: 30%;
+        padding-top: 10px;
+
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .hiddenContent a:hover {
+        color: #0d47a1;
+        padding: 10px 5px 0 5px;
+    }
+
+    .dropDown:hover .hiddenContent {
+        display: block;
+    }
+}
+
 /*
     BUTTONS
 */
