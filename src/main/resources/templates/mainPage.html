@@ -16,7 +16,7 @@
             <div id="logo_info">
                 <img id="logo_img" src="../static/img/Vect.png" th:src="@{/img/Vect.png}"/>
                 <img id="logo_line" src="../static/img/Line1.png" th:src="@{/img/Line1.png}"/>
-                <p id="sait_name"><strong>Инициативы<br/>жителей Дубны</strong></p>
+                <a id="sait_name" href="./mainPage.html"><strong>Инициативы<br/>жителей Дубны</strong></a>
             </div>
         </li>
         <li>
@@ -24,9 +24,9 @@
                 <input type="search" placeholder="Поиск" name="search" class="search_box">
             </form>
         </li>
-        <li><a class="nav" href="#">Инициативы</a></li>
-        <li><a class="nav" href="#">Правила работы</a></li>
-        <li><a class="nav" href="#">Обратная связь</a></li>
+        <li><a class="nav" href="./initiatives.html">Инициативы</a></li>
+        <li><a class="nav" href="./rulesOfWork.html">Правила работы</a></li>
+        <li><a class="nav" href="./Contacts.html">Обратная связь</a></li>
         <li><a id="reg" href="login.html" class="primaryButton" onclick="OnLogin()">Войти</a></li>
         <li class="helper"></li>
     </ul>
@@ -52,10 +52,12 @@
     <ul id="initiativeHeader" style="text-align: justify;">
         <li><h2 style="text-align: left">Инициативы</h2></li>
         <li>
+            <a href="./initiative.html">
             <button id="AddInitiative" class="secondaryButton"
                     style="vertical-align: bottom;">
                 Предложить инициативу
             </button>
+            </a>
         </li>
         <li class="helper"></li>
     </ul>
@@ -71,7 +73,7 @@
             <td></td>
         </tr>
     </table>
-    <a class="allInitiatives" href="./initiatives">
+    <a class="allInitiatives" href="./initiatives.html">
         <span>Все инициативы </span>
         <img src="../static/img/bodilessArrowRight.svg" alt=""/>
     </a>
