@@ -22,7 +22,12 @@ async function SendInitiative(){
   //  }
     if (true) // otvet http
     {
-        console.log("za");
+        var thanksWordsDiv = document.getElementById('thanksWordsDiv');
+        var leftInitiativeForm = document.getElementById('leftInitiativeForm');
+        var sendInitiativeButton = document.getElementById('submitForm');
+        thanksWordsDiv.style.display = 'block';
+        leftInitiativeForm.style.display = 'none';
+        sendInitiativeButton.style.display = 'none';
     }
 }
 

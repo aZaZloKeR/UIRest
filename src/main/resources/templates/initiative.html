@@ -14,7 +14,7 @@
     <a id="goBack" href="./initiatives.html">< к инициативам</a>
     <h1 id="newInitiativeH1">Новая инициатива</h1>
     <div class="initiative">
-        <div class="leftInitiative">
+        <div class="leftInitiative" id="leftInitiativeForm">
             <form class="formInitiative">
                 <input onchange="CheckIsFilled()" type="text" name="nameInitiative" id="nameInitiative" placeholder="Название">
                 <textarea onchange="CheckIsFilled()" placeholder="Описание" id="textArea"></textarea>
@@ -34,6 +34,11 @@
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="leftInitiative" id="thanksWordsDiv">
+            <h1>Инициатива успешно отправлена!</h1>
+            <p id="thanksWords">Спасибо, что делаете наш город лучше! Ваша заявка обрабатывается администратором, мы обязательно с вами свяжемся по электронной почте.</p>
+            <a href="initiative.html"><button id="goToNewInitiative">ПРЕДЛОЖИТЬ ЕЩЕ ИНИЦИАТИВУ</button></a>
         </div>
         <div class="rightInitiative">
             <h1>

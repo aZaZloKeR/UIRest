@@ -529,7 +529,7 @@ main
     letter-spacing: 2px;
 }
 
-#submitForm
+#submitForm, #goToNewInitiative
 {
     width: 150px;
     height: 40px;
@@ -540,5 +540,23 @@ main
     margin-bottom: 30px;
     border:none;
     background: #809dca;
+}
+
+#thanksWords
+{
+    margin-top:30px;
+    font-size: 16px;
+}
+
+#thanksWordsDiv
+{
+    display:none;
+}
+
+#goToNewInitiative
+{
+    margin-top:30px;
+    background: #0D47A1;
+    width:270px;
 }
 
